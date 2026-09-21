@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "probanker/item",
+  "title": "Diagnostic item",
+  "description": "BLUEPRINT.md 3.1. Distractors carry misconceptions; grounding carries authority.",
+  "type": "object",
+  "required": ["item_id", "syllabus_node", "concept", "stem", "options",
+               "grounding_regime", "grounding", "verification", "lifecycle"],
+  "additionalProperties": false,
+  "properties": {
+    "item_id": { "type": "string", "pattern": "^itm_[A-Za-z0-9_-]{4,40}$" },
+
+    "syllabus_node": {
+      "type": "string",
+      "description": "IIBF spine - coverage accounting (2.5). Never reorganised.",
+      "pattern": "^[A-Z]{3,6}\\.[A-D]\\.[0-9]{1,2}(\\.[0-9]{1,2})?$"
+    },
+    "concept": {
+      "type": "string",
+      "description": "Our graph - delivery order (2.5).",
+      "pattern": "^[a-z0-9-]{3,60}$"
+    },
+    "prereqs": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]{3,60}$" },
+      "default": []
+    },
+
+    "bloom": { "enum": ["recall", "understand", "apply", "analyse", "evaluate"] },
+    "tier": { "enum": ["jaiib", "caiib", "diploma", "certificate"] },
+
+    "stem": { "type": "string", "minLength": 15 },
+    "given": {
+      "type": "array",
+      "description": "Named figures the stem supplies; drives the arithmetic check.",
+      "items": {
+        "type": "object",
+        "required": ["label", "value"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "number" },
+          "unit": { "type": "string" }
+        }
+      }
+    },
+
+    "options": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-E]$" },
+          "text": { "type": "string", "minLength": 1 },
+          "key": { "type": "boolean" },
+          "misconception": { "type": "string" },
+          "value": { "type": "number" }
+        }
+      }
+    },
+
+    "grounding_regime": {
+      "enum": ["statutory", "doctrinal"],
+      "description": "statutory: authority is a clause. doctrinal: authority is the courseware plus, for numeric items, recomputation."
+    },
+    "grounding": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source", "locator"],
+        "additionalProperties": false,
+        "properties": {
+          "source": { "type": "string" },
+          "locator": { "type": "string" },
+          "version": { "type": "string" },
+          "kind": { "enum": ["statute", "courseware"] }
+        }
+      }
+    },
+    "derived_from": {
+      "type": "array",
+      "description": "Internal provenance (3.6). Never rendered to a learner.",
+      "items": {
+        "type": "object",
+        "required": ["work", "edition"],
+        "additionalProperties": false,
+        "properties": {
+          "work": { "type": "string" },
+          "edition": { "type": "string" },
+          "unit": { "type": "integer" },
+          "section": { "type": "string" }
+        }
+      }
+    },
+
+    "verification": {
+      "type": "object",
+      "description": "3.7 gauntlet. No human signature exists.",
+      "required": ["entailed_span", "second_model_agrees"],
+      "additionalProperties": false,
+      "properties": {
+        "entailed_span": { "type": "string", "minLength": 8 },
+        "second_model_agrees": { "type": "boolean" },
+        "derivation_overlap": { "type": "number", "minimum": 0, "maximum": 1 },
+        "arithmetic": {
+          "type": "object",
+          "description": "Executable check for numeric items - the strongest gate available.",
+          "required": ["expression", "expected"],
+          "additionalProperties": false,
+          "properties": {
+            "expression": { "type": "string" },
+            "expected": { "type": "number" },
+            "tolerance": { "type": "number", "default": 0.005 }
+          }
+        }
+      }
+    },
+
+    "psychometrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "a": { "type": "number" },
+        "b": { "type": "number" },
+        "n_responses": { "type": "integer", "minimum": 0 },
+        "distractor_pull": { "type": "object" }
+      }
+    },
+
+    "lifecycle": {
+      "type": "object",
+      "required": ["state"],
+      "additionalProperties": false,
+      "properties": {
+        "state": { "enum": ["draft", "verifying", "field", "live", "review", "retired"] },
+        "last_verified": { "type": "string" },
+        "retired_reason": { "type": "string" }
+      }
+    }
+  }
+}

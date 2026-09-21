@@ -1,0 +1,106 @@
+[
+  {
+    "item_id": "itm_abfm_u8_dfl_001",
+    "syllabus_node": "ABFM.B.8.3",
+    "concept": "ratio-of-percentage-changes",
+    "prereqs": ["ratio-arithmetic"],
+    "bloom": "apply",
+    "tier": "caiib",
+    "stem": "A company reports EBIT of Rs. 40,00,000 against interest of Rs. 10,00,000, and is taxed at 30%. What is its degree of financial leverage?",
+    "given": [
+      { "label": "EBIT", "value": 4000000, "unit": "INR" },
+      { "label": "Interest", "value": 1000000, "unit": "INR" },
+      { "label": "Tax rate", "value": 0.30, "unit": "fraction" }
+    ],
+    "options": [
+      { "id": "A", "text": "1.33", "value": 1.33, "key": true },
+      { "id": "B", "text": "0.75", "value": 0.75, "misconception": "ABFM.B.LEV.DFL-DOL-SWAPPED" },
+      { "id": "C", "text": "0.93", "value": 0.93, "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL" },
+      { "id": "D", "text": "1.00", "value": 1.00, "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE" }
+    ],
+    "grounding_regime": "doctrinal",
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.3 Degree of Financial Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      { "work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.3" }
+    ],
+    "verification": {
+      "entailed_span": "Degree of financial leverage is defined as ratio of percentage change in EPS and percentage change in EBIT",
+      "second_model_agrees": true,
+      "derivation_overlap": 0.11,
+      "arithmetic": {
+        "expression": "ebit / (ebit - interest)",
+        "expected": 1.3333333,
+        "tolerance": 0.005
+      }
+    },
+    "psychometrics": {
+      "a": null,
+      "b": null,
+      "n_responses": 0,
+      "distractor_pull": {}
+    },
+    "lifecycle": {
+      "state": "field",
+      "last_verified": "2026-09-21"
+    }
+  },
+  {
+    "item_id": "itm_abfm_u8_dol_002",
+    "syllabus_node": "ABFM.B.8.5",
+    "concept": "contribution-and-cost-behaviour",
+    "prereqs": ["ratio-arithmetic"],
+    "bloom": "apply",
+    "tier": "caiib",
+    "stem": "Sales are Rs. 1,00,000 with a P/V ratio of 40%, and operating fixed costs are Rs. 20,000. What is the degree of operating leverage?",
+    "given": [
+      { "label": "Sales", "value": 100000, "unit": "INR" },
+      { "label": "PV ratio", "value": 0.40, "unit": "fraction" },
+      { "label": "Fixed costs", "value": 20000, "unit": "INR" }
+    ],
+    "options": [
+      { "id": "A", "text": "2.00", "value": 2.00, "key": true },
+      { "id": "B", "text": "2.50", "value": 2.50, "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE" },
+      { "id": "C", "text": "0.50", "value": 0.50, "misconception": "ABFM.B.LEV.DFL-DOL-SWAPPED" },
+      { "id": "D", "text": "1.40", "value": 1.40, "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL" }
+    ],
+    "grounding_regime": "doctrinal",
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.5 Degree of Operating Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      { "work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.5" }
+    ],
+    "verification": {
+      "entailed_span": "DOL = Contribution Earnings Before Interest and Taxes (EBIT)",
+      "second_model_agrees": true,
+      "derivation_overlap": 0.14,
+      "arithmetic": {
+        "expression": "(sales * pv_ratio) / ((sales * pv_ratio) - fixed_costs)",
+        "expected": 2.0,
+        "tolerance": 0.005
+      }
+    },
+    "psychometrics": {
+      "a": null,
+      "b": null,
+      "n_responses": 0,
+      "distractor_pull": {}
+    },
+    "lifecycle": {
+      "state": "field",
+      "last_verified": "2026-09-21"
+    }
+  }
+]

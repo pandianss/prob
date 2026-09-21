@@ -1,0 +1,1753 @@
+{
+ "source": "abfm.txt",
+ "units": [
+  {
+   "unit": 1,
+   "title": "Basics of Management",
+   "module": "A",
+   "module_title": "The Management Process",
+   "pages": 52,
+   "chars": 79619,
+   "sections": [
+    {
+     "ref": "1.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "1.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "1.2",
+     "title": "Definition Of Management"
+    },
+    {
+     "ref": "1.3",
+     "title": "The Management Process"
+    },
+    {
+     "ref": "1.4",
+     "title": "Functions Of Management"
+    },
+    {
+     "ref": "1.5",
+     "title": "Importance Of Management"
+    },
+    {
+     "ref": "1.6",
+     "title": "Management Thoughts & Approaches"
+    },
+    {
+     "ref": "1.7",
+     "title": "Management Challenges & Opportunities"
+    },
+    {
+     "ref": "1.8",
+     "title": "Introduction To Strategic Management"
+    },
+    {
+     "ref": "1.9",
+     "title": "Business Environment Analysis"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 3,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 2,
+    "Keywords": 2,
+    "Check Your Progress": 2,
+    "Solution": 3
+   },
+   "math": {
+    "eq": 3,
+    "pct": 24,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 26
+  },
+  {
+   "unit": 2,
+   "title": "Planning",
+   "module": "A",
+   "module_title": "The Management Process",
+   "pages": 48,
+   "chars": 64119,
+   "sections": [
+    {
+     "ref": "2.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "2.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "2.2",
+     "title": "Fundamentals Of Planning"
+    },
+    {
+     "ref": "2.3",
+     "title": "Steps In Planning"
+    },
+    {
+     "ref": "2.4",
+     "title": "Importance Of Planning"
+    },
+    {
+     "ref": "2.5",
+     "title": "Advantages And Disadvantages Of Planning"
+    },
+    {
+     "ref": "2.6",
+     "title": "Management By Objectives"
+    },
+    {
+     "ref": "2.7",
+     "title": "Plan Components"
+    },
+    {
+     "ref": "2.8",
+     "title": "Contingency Planning"
+    },
+    {
+     "ref": "2.9",
+     "title": "Forecasting And Decision Making"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 2,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 1
+   },
+   "math": {
+    "eq": 0,
+    "pct": 0,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 78
+  },
+  {
+   "unit": 3,
+   "title": "Organising",
+   "module": "A",
+   "module_title": "The Management Process",
+   "pages": 72,
+   "chars": 114134,
+   "sections": [
+    {
+     "ref": "3.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "3.1",
+     "title": "Introduction And Fundamentals Of Organising"
+    },
+    {
+     "ref": "3.2",
+     "title": "Importance Of Organisation"
+    },
+    {
+     "ref": "3.3",
+     "title": "Stages In Organising Process"
+    },
+    {
+     "ref": "3.4",
+     "title": "The Organising Process"
+    },
+    {
+     "ref": "3.5",
+     "title": "Principles Of Organising"
+    },
+    {
+     "ref": "3.6",
+     "title": "Types Of Organisations"
+    },
+    {
+     "ref": "3.7",
+     "title": "Organisation Structure"
+    },
+    {
+     "ref": "3.8",
+     "title": "Organisation Charts And Manuals"
+    },
+    {
+     "ref": "3.9",
+     "title": "The Organisation Culture"
+    },
+    {
+     "ref": "3.10",
+     "title": "Authority And Responsibility"
+    },
+    {
+     "ref": "3.11",
+     "title": "Key Issues In Organisation Structure"
+    },
+    {
+     "ref": "3.12",
+     "title": "Organisational Change"
+    },
+    {
+     "ref": "3.13",
+     "title": "Conflict Dynamics"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 3,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 1
+   },
+   "math": {
+    "eq": 0,
+    "pct": 0,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 126
+  },
+  {
+   "unit": 4,
+   "title": "Staffing",
+   "module": "A",
+   "module_title": "The Management Process",
+   "pages": 64,
+   "chars": 106821,
+   "sections": [
+    {
+     "ref": "4.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "4.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "4.2",
+     "title": "Functions Of Staffing"
+    },
+    {
+     "ref": "4.3",
+     "title": "Objectives Of Staffing"
+    },
+    {
+     "ref": "4.4",
+     "title": "Nature Of Staffing"
+    },
+    {
+     "ref": "4.5",
+     "title": "Facets Of Staffing"
+    },
+    {
+     "ref": "4.6",
+     "title": "Significance Of Staffing"
+    },
+    {
+     "ref": "4.7",
+     "title": "System Approach To Staffing"
+    },
+    {
+     "ref": "4.8",
+     "title": "Recruitment"
+    },
+    {
+     "ref": "4.9",
+     "title": "Selection"
+    },
+    {
+     "ref": "4.10",
+     "title": "Training"
+    },
+    {
+     "ref": "4.11",
+     "title": "Retention And Development"
+    },
+    {
+     "ref": "4.12",
+     "title": "Knowledge And Learning Management"
+    },
+    {
+     "ref": "4.13",
+     "title": "Performance Appraisal"
+    },
+    {
+     "ref": "4.14",
+     "title": "Human Resource Development"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 2,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 1
+   },
+   "math": {
+    "eq": 0,
+    "pct": 2,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 198
+  },
+  {
+   "unit": 5,
+   "title": "Directing",
+   "module": "A",
+   "module_title": "The Management Process",
+   "pages": 42,
+   "chars": 65628,
+   "sections": [
+    {
+     "ref": "5.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "5.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "5.2",
+     "title": "Characteristics Of Directing"
+    },
+    {
+     "ref": "5.3",
+     "title": "Importance Of Directing"
+    },
+    {
+     "ref": "5.4",
+     "title": "Elements Of Directing"
+    },
+    {
+     "ref": "5.5",
+     "title": "Leadership"
+    },
+    {
+     "ref": "5.6",
+     "title": "Motivation"
+    },
+    {
+     "ref": "5.7",
+     "title": "Communication"
+    },
+    {
+     "ref": "5.8",
+     "title": "Supervision"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 1
+   },
+   "math": {
+    "eq": 1,
+    "pct": 0,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 262
+  },
+  {
+   "unit": 6,
+   "title": "Controlling",
+   "module": "A",
+   "module_title": "The Management Process",
+   "pages": 34,
+   "chars": 45153,
+   "sections": [
+    {
+     "ref": "6.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "6.1",
+     "title": "Basics Of Controlling"
+    },
+    {
+     "ref": "6.2",
+     "title": "Characteristics Of Controlling"
+    },
+    {
+     "ref": "6.3",
+     "title": "Advantages Of Controlling"
+    },
+    {
+     "ref": "6.4",
+     "title": "Limitations Of Controlling"
+    },
+    {
+     "ref": "6.5",
+     "title": "Types Of Control Management"
+    },
+    {
+     "ref": "6.6",
+     "title": "Control Process"
+    },
+    {
+     "ref": "6.7",
+     "title": "Relation Between Planning And Control"
+    },
+    {
+     "ref": "6.8",
+     "title": "Control Techniques"
+    },
+    {
+     "ref": "6.9",
+     "title": "Control Technique And Information Technology"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 0,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 0,
+    "Keywords": 0,
+    "Check Your Progress": 0,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 2,
+    "pct": 0,
+    "delta": 0,
+    "times": 1
+   },
+   "line_start": 304
+  },
+  {
+   "unit": 7,
+   "title": "Sources of Finance and Financial Strategies",
+   "module": "B",
+   "module_title": "Advanced Concepts of Financial Management",
+   "pages": 28,
+   "chars": 45260,
+   "sections": [
+    {
+     "ref": "7.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "7.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "7.2",
+     "title": "Equity Capital"
+    },
+    {
+     "ref": "7.3",
+     "title": "Internal Accruals"
+    },
+    {
+     "ref": "7.4",
+     "title": "Preference Capital"
+    },
+    {
+     "ref": "7.5",
+     "title": "Term Loans"
+    },
+    {
+     "ref": "7.6",
+     "title": "Debentures"
+    },
+    {
+     "ref": "7.7",
+     "title": "Alternative Financing Strategies In The Context Of Regulatory Requirements"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 1
+   },
+   "math": {
+    "eq": 0,
+    "pct": 1,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 338
+  },
+  {
+   "unit": 8,
+   "title": "Financial and Operating Leverages",
+   "module": "B",
+   "module_title": "Advanced Concepts of Financial Management",
+   "pages": 26,
+   "chars": 21184,
+   "sections": [
+    {
+     "ref": "8.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "8.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "8.2",
+     "title": "Financial Leverage"
+    },
+    {
+     "ref": "8.3",
+     "title": "Degree Of Financial Leverage And Its Behaviour"
+    },
+    {
+     "ref": "8.4",
+     "title": "Operating Leverage"
+    },
+    {
+     "ref": "8.5",
+     "title": "Degree Of Operating Leverage And Its Behaviour"
+    },
+    {
+     "ref": "8.6",
+     "title": "Combined Or Total Leverage"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 3
+   },
+   "math": {
+    "eq": 77,
+    "pct": 27,
+    "delta": 17,
+    "times": 8
+   },
+   "line_start": 366
+  },
+  {
+   "unit": 9,
+   "title": "Capital Investment Decisions",
+   "module": "B",
+   "module_title": "Advanced Concepts of Financial Management",
+   "pages": 42,
+   "chars": 50920,
+   "sections": [
+    {
+     "ref": "9.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "9.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "9.2",
+     "title": "Objective Of Capital Investment Decisions"
+    },
+    {
+     "ref": "9.3",
+     "title": "Estimation Of Project Cash Flows"
+    },
+    {
+     "ref": "9.4",
+     "title": "Social Cost Benefit Analysis"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 2,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 2,
+    "Keywords": 2,
+    "Check Your Progress": 2,
+    "Solution": 2
+   },
+   "math": {
+    "eq": 76,
+    "pct": 23,
+    "delta": 0,
+    "times": 8
+   },
+   "line_start": 392
+  },
+  {
+   "unit": 10,
+   "title": "Capital Budgeting for International Project Investment Decisions",
+   "module": "B",
+   "module_title": "Advanced Concepts of Financial Management",
+   "pages": 34,
+   "chars": 43998,
+   "sections": [
+    {
+     "ref": "10.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "10.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "10.2",
+     "title": "Foreign Investment Analysis"
+    },
+    {
+     "ref": "10.3",
+     "title": "International Capital Budgeting"
+    },
+    {
+     "ref": "10.4",
+     "title": "Issues Involved In Evaluation Of Overseas Projects"
+    },
+    {
+     "ref": "10.5",
+     "title": "Approaches For Evaluation Of Overseas Project"
+    },
+    {
+     "ref": "10.6",
+     "title": "Evaluation Methods"
+    },
+    {
+     "ref": "10.7",
+     "title": "Impact Of Transfer Pricing"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 6
+   },
+   "math": {
+    "eq": 91,
+    "pct": 50,
+    "delta": 0,
+    "times": 2
+   },
+   "line_start": 434
+  },
+  {
+   "unit": 11,
+   "title": "Adjustment of Risk and Uncertainty in Capital Budgeting Decision",
+   "module": "B",
+   "module_title": "Advanced Concepts of Financial Management",
+   "pages": 36,
+   "chars": 49476,
+   "sections": [
+    {
+     "ref": "11.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "11.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "11.2",
+     "title": "Sources & Perspectives On Risk"
+    },
+    {
+     "ref": "11.3",
+     "title": "Sensitivity Analysis"
+    },
+    {
+     "ref": "11.4",
+     "title": "Scenario Analysis"
+    },
+    {
+     "ref": "11.5",
+     "title": "Hillier Model"
+    },
+    {
+     "ref": "11.6",
+     "title": "Simulation Analysis"
+    },
+    {
+     "ref": "11.7",
+     "title": "Decision Tree Analysis"
+    },
+    {
+     "ref": "11.8",
+     "title": "Corporate Risk Analysis"
+    },
+    {
+     "ref": "11.9",
+     "title": "Managing Risk"
+    },
+    {
+     "ref": "11.10",
+     "title": "Project Selection Under Risk"
+    },
+    {
+     "ref": "11.11",
+     "title": "Risk Analysis In Practice"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 2
+   },
+   "math": {
+    "eq": 32,
+    "pct": 39,
+    "delta": 0,
+    "times": 8
+   },
+   "line_start": 468
+  },
+  {
+   "unit": 12,
+   "title": "Decision Making",
+   "module": "B",
+   "module_title": "Advanced Concepts of Financial Management",
+   "pages": 42,
+   "chars": 56359,
+   "sections": [
+    {
+     "ref": "12.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "12.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "12.2",
+     "title": "Decision Making Using Cost-Volume-Profit (Cvp) Analysis"
+    },
+    {
+     "ref": "12.3",
+     "title": "Decision Making Using Relevant Cost Concepts"
+    },
+    {
+     "ref": "12.4",
+     "title": "Decision Making Using Activity Based Costing (Abc)"
+    },
+    {
+     "ref": "12.5",
+     "title": "Ethical And Non-Financial Considerations Relevant To Decision Making"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 0,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 0,
+    "Keywords": 0,
+    "Check Your Progress": 0,
+    "Solution": 5
+   },
+   "math": {
+    "eq": 38,
+    "pct": 3,
+    "delta": 0,
+    "times": 14
+   },
+   "line_start": 504
+  },
+  {
+   "unit": 13,
+   "title": "Corporate Valuation",
+   "module": "C",
+   "module_title": "Valuation, Mergers & Acquisitions",
+   "pages": 52,
+   "chars": 69018,
+   "sections": [
+    {
+     "ref": "13.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "13.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "13.2",
+     "title": "Approaches To Corporate Valuation"
+    },
+    {
+     "ref": "13.3",
+     "title": "Adjusted Book Value Approach"
+    },
+    {
+     "ref": "13.4",
+     "title": "Stock And Debt Approach"
+    },
+    {
+     "ref": "13.5",
+     "title": "Direct Comparison Approach"
+    },
+    {
+     "ref": "13.6",
+     "title": "Discounted Cash Flow Approach"
+    },
+    {
+     "ref": "13.7",
+     "title": "Steps Involved In Valuation Using Dcf Approach"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 2,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 2,
+    "Keywords": 2,
+    "Check Your Progress": 2,
+    "Solution": 3
+   },
+   "math": {
+    "eq": 45,
+    "pct": 33,
+    "delta": 0,
+    "times": 1
+   },
+   "line_start": 546
+  },
+  {
+   "unit": 14,
+   "title": "Discounted Cash Flow Valuation",
+   "module": "C",
+   "module_title": "Valuation, Mergers & Acquisitions",
+   "pages": 30,
+   "chars": 39113,
+   "sections": [
+    {
+     "ref": "14.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "14.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "14.2",
+     "title": "Estimating Inputs"
+    },
+    {
+     "ref": "14.3",
+     "title": "Approaches To Discounted Cash Flow Models Approach I"
+    },
+    {
+     "ref": "14.4",
+     "title": "Various Discounted Cash Flow Models"
+    },
+    {
+     "ref": "14.5",
+     "title": "Dividend Discount Model"
+    },
+    {
+     "ref": "14.6",
+     "title": "Applicability Of The Dividend Discount Model"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 3
+   },
+   "math": {
+    "eq": 44,
+    "pct": 11,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 598
+  },
+  {
+   "unit": 15,
+   "title": "Other Non-DCF Valuation Models",
+   "module": "C",
+   "module_title": "Valuation, Mergers & Acquisitions",
+   "pages": 42,
+   "chars": 55263,
+   "sections": [
+    {
+     "ref": "15.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "15.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "15.2",
+     "title": "Relative Valuation Model"
+    },
+    {
+     "ref": "15.3",
+     "title": "Equity Valuation Multiples Model"
+    },
+    {
+     "ref": "15.4",
+     "title": "Enterprise Value Multiples Model"
+    },
+    {
+     "ref": "15.5",
+     "title": "Choosing The Right Multiples"
+    },
+    {
+     "ref": "15.6",
+     "title": "Book Value Approach Model"
+    },
+    {
+     "ref": "15.7",
+     "title": "Stock And Debt Approach"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 1
+   },
+   "math": {
+    "eq": 40,
+    "pct": 0,
+    "delta": 0,
+    "times": 8
+   },
+   "line_start": 628
+  },
+  {
+   "unit": 16,
+   "title": "Special Cases of Valuation",
+   "module": "C",
+   "module_title": "Valuation, Mergers & Acquisitions",
+   "pages": 60,
+   "chars": 105790,
+   "sections": [
+    {
+     "ref": "16.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "16.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "16.2",
+     "title": "Intangibles –Brand, Human Valuation Etc"
+    },
+    {
+     "ref": "16.3",
+     "title": "Real Estate Firms"
+    },
+    {
+     "ref": "16.4",
+     "title": "Start-Up Firms"
+    },
+    {
+     "ref": "16.5",
+     "title": "Firms With Negative Or Low Earnings"
+    },
+    {
+     "ref": "16.6",
+     "title": "Financial Service Companies"
+    },
+    {
+     "ref": "16.7",
+     "title": "Distressed Firms"
+    },
+    {
+     "ref": "16.8",
+     "title": "Valuation Of Cash And Cross Holdings"
+    },
+    {
+     "ref": "16.9",
+     "title": "Warrants And Convertibles"
+    },
+    {
+     "ref": "16.10",
+     "title": "Cyclical & Non-Cyclical Companies"
+    },
+    {
+     "ref": "16.11",
+     "title": "Holding Companies"
+    },
+    {
+     "ref": "16.12",
+     "title": "E-Commerce Firms E-"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 0,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 0,
+    "Keywords": 0,
+    "Check Your Progress": 0,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 20,
+    "pct": 14,
+    "delta": 0,
+    "times": 2
+   },
+   "line_start": 670
+  },
+  {
+   "unit": 17,
+   "title": "Merger, Acquisition & Restructuring",
+   "module": "C",
+   "module_title": "Valuation, Mergers & Acquisitions",
+   "pages": 90,
+   "chars": 155297,
+   "sections": [
+    {
+     "ref": "17.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "17.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "17.2",
+     "title": "Types Of Transactions"
+    },
+    {
+     "ref": "17.3",
+     "title": "Reasons For Merger"
+    },
+    {
+     "ref": "17.4",
+     "title": "Mechanics Of A Merger"
+    },
+    {
+     "ref": "17.5",
+     "title": "Costs And Benefits Of A Merger"
+    },
+    {
+     "ref": "17.6",
+     "title": "Exchange Ratio In A Merger"
+    },
+    {
+     "ref": "17.7",
+     "title": "Purchase Of A Division/ Plant"
+    },
+    {
+     "ref": "17.8",
+     "title": "Takeovers"
+    },
+    {
+     "ref": "17.9",
+     "title": "Leveraged Buyouts"
+    },
+    {
+     "ref": "17.10",
+     "title": "Acquisition Financing"
+    },
+    {
+     "ref": "17.11",
+     "title": "Business Alliances"
+    },
+    {
+     "ref": "17.12",
+     "title": "Managing Acquisitions"
+    },
+    {
+     "ref": "17.13",
+     "title": "Divestitures"
+    },
+    {
+     "ref": "17.14",
+     "title": "Holding Company"
+    },
+    {
+     "ref": "17.15",
+     "title": "Demergers"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 2,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 2,
+    "Keywords": 2,
+    "Check Your Progress": 2,
+    "Solution": 2
+   },
+   "math": {
+    "eq": 34,
+    "pct": 2,
+    "delta": 0,
+    "times": 1
+   },
+   "line_start": 730
+  },
+  {
+   "unit": 18,
+   "title": "Deal Structuring and Financial Strategies",
+   "module": "C",
+   "module_title": "Valuation, Mergers & Acquisitions",
+   "pages": 42,
+   "chars": 66568,
+   "sections": [
+    {
+     "ref": "18.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "18.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "18.2",
+     "title": "Negotiations"
+    },
+    {
+     "ref": "18.3",
+     "title": "Payment And Legal Considerations"
+    },
+    {
+     "ref": "18.4",
+     "title": "Tax And Accounting Considerations"
+    },
+    {
+     "ref": "18.5",
+     "title": "Tax Reliefs & Benefits In Case Of Amalgamation In India"
+    },
+    {
+     "ref": "18.6",
+     "title": "Financial Reporting Of Business Combinations"
+    },
+    {
+     "ref": "18.7",
+     "title": "Deal Financing M&A"
+    },
+    {
+     "ref": "18.8",
+     "title": "Financing Of Cross Border Acquisitions In India"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 0,
+    "pct": 19,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 820
+  },
+  {
+   "unit": 19,
+   "title": "Hybrid Finance",
+   "module": "D",
+   "module_title": "Emerging Business Solutions",
+   "pages": 34,
+   "chars": 53355,
+   "sections": [
+    {
+     "ref": "19.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "19.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "19.2",
+     "title": "Advantages And Disadvantages Of Hybrid Securities"
+    },
+    {
+     "ref": "19.3",
+     "title": "Types Of Hybrid Securities"
+    },
+    {
+     "ref": "19.4",
+     "title": "Preference Share Capital"
+    },
+    {
+     "ref": "19.5",
+     "title": "Features Of Warrants"
+    },
+    {
+     "ref": "19.6",
+     "title": "Features Of Convertible Debentures"
+    },
+    {
+     "ref": "19.7",
+     "title": "Differences Between Warrants And Convertible Debentures"
+    },
+    {
+     "ref": "19.8",
+     "title": "Valuation Of Warrants"
+    },
+    {
+     "ref": "19.9",
+     "title": "Valuation Of Compulsorily Convertible (Partly Or Fully) Debentures"
+    },
+    {
+     "ref": "19.10",
+     "title": "Objective Of Issuing Warrants And Convertible Debentures"
+    },
+    {
+     "ref": "19.11",
+     "title": "Features Of Foreign Currency Convertible Bond (Fccb)"
+    },
+    {
+     "ref": "19.12",
+     "title": "Mezzanine Financing"
+    },
+    {
+     "ref": "19.13",
+     "title": "Innovative Hybrids"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 0,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 0,
+    "Keywords": 0,
+    "Check Your Progress": 0,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 34,
+    "pct": 17,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 862
+  },
+  {
+   "unit": 20,
+   "title": "Startup Finance",
+   "module": "D",
+   "module_title": "Emerging Business Solutions",
+   "pages": 60,
+   "chars": 99703,
+   "sections": [
+    {
+     "ref": "20.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "20.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "20.2",
+     "title": "Benefits To Startup Under The Startup Plan"
+    },
+    {
+     "ref": "20.3",
+     "title": "Startup Definition In India"
+    },
+    {
+     "ref": "20.4",
+     "title": "Challenges Faced By Startups"
+    },
+    {
+     "ref": "20.5",
+     "title": "State Startup Policy"
+    },
+    {
+     "ref": "20.6",
+     "title": "Pitch Presentation"
+    },
+    {
+     "ref": "20.7",
+     "title": "Programmes And Competitions For Startups"
+    },
+    {
+     "ref": "20.8",
+     "title": "Tax Exemptions"
+    },
+    {
+     "ref": "20.9",
+     "title": "Funding"
+    },
+    {
+     "ref": "20.10",
+     "title": "Investors"
+    },
+    {
+     "ref": "20.11",
+     "title": "Funding Schemes And Programmes"
+    },
+    {
+     "ref": "20.12",
+     "title": "Programs Running In"
+    },
+    {
+     "ref": "20.13",
+     "title": "International Challenges And Bridges"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 1
+   },
+   "math": {
+    "eq": 0,
+    "pct": 16,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 896
+  },
+  {
+   "unit": 21,
+   "title": "Private Equity and Venture Capital",
+   "module": "D",
+   "module_title": "Emerging Business Solutions",
+   "pages": 68,
+   "chars": 104347,
+   "sections": [
+    {
+     "ref": "21.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "21.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "21.2",
+     "title": "Characteristics Of Venture Capital Investments"
+    },
+    {
+     "ref": "21.3",
+     "title": "Characteristics Shared By Private Equity And Venture Capital, As Well As Their Ke"
+    },
+    {
+     "ref": "21.4",
+     "title": "Financing Options Available Through Venture Capital"
+    },
+    {
+     "ref": "21.5",
+     "title": "The Procedures Involved In Obtaining Venture Capital Funding"
+    },
+    {
+     "ref": "21.6",
+     "title": "Advantages And Disadvantages Of Venture Capital Funding"
+    },
+    {
+     "ref": "21.7",
+     "title": "Examples Of Venture Capital Financing"
+    },
+    {
+     "ref": "21.8",
+     "title": "The Importance Of Private Equity And Venture Capital For New Businesses"
+    },
+    {
+     "ref": "21.9",
+     "title": "Indian Venture Capital Firms"
+    },
+    {
+     "ref": "21.10",
+     "title": "Roles At A Vc"
+    },
+    {
+     "ref": "21.11",
+     "title": "Terms Of V C Funding And Its Structure"
+    },
+    {
+     "ref": "21.12",
+     "title": "Returns For Venture Capital"
+    },
+    {
+     "ref": "21.13",
+     "title": "The Value That Vc"
+    },
+    {
+     "ref": "21.14",
+     "title": "What Are The Prospects For Venture Capital In The Near Future"
+    },
+    {
+     "ref": "21.15",
+     "title": "Investment In Private Equity"
+    },
+    {
+     "ref": "21.16",
+     "title": "Benefits Obtained Through Private Equity"
+    },
+    {
+     "ref": "21.17",
+     "title": "Drawbacks To The Practice Of Private Equity"
+    },
+    {
+     "ref": "21.18",
+     "title": "An Overview Of The Development Of Private Equity"
+    },
+    {
+     "ref": "21.19",
+     "title": "What Is The Process Behind Private Equity"
+    },
+    {
+     "ref": "21.20",
+     "title": "How Do Companies That Invest In Private Equity Make Money"
+    },
+    {
+     "ref": "21.21",
+     "title": "Problems Associated With Private Equity"
+    },
+    {
+     "ref": "21.22",
+     "title": "Companies In India That Deal In Private Equity (I) Important International Player"
+    },
+    {
+     "ref": "21.23",
+     "title": "The Growth Of India"
+    },
+    {
+     "ref": "21.24",
+     "title": "The Legal And Administrative Structure Of India"
+    },
+    {
+     "ref": "21.25",
+     "title": "Crucial Stages In The Process Of Investing In Private Equity"
+    },
+    {
+     "ref": "21.26",
+     "title": "Due Diligence"
+    },
+    {
+     "ref": "21.27",
+     "title": "Exit Strategies"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 5,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 2,
+    "Keywords": 2,
+    "Check Your Progress": 2,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 1,
+    "pct": 35,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 956
+  },
+  {
+   "unit": 22,
+   "title": "Artificial Intelligence",
+   "module": "D",
+   "module_title": "Emerging Business Solutions",
+   "pages": 36,
+   "chars": 59633,
+   "sections": [
+    {
+     "ref": "22.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "22.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "22.2",
+     "title": "History Of Artificial Intelligence"
+    },
+    {
+     "ref": "22.3",
+     "title": "Applicability Of Artificial Intelligence"
+    },
+    {
+     "ref": "22.4",
+     "title": "Contribution Of Google"
+    },
+    {
+     "ref": "22.5",
+     "title": "Artificial Intelligence In Banking And Finance"
+    },
+    {
+     "ref": "22.6",
+     "title": "The Future Scope Of Artificial Intelligence"
+    },
+    {
+     "ref": "22.7",
+     "title": "Neural Networks"
+    },
+    {
+     "ref": "22.8",
+     "title": "Control Theory And Cybernetics"
+    },
+    {
+     "ref": "22.9",
+     "title": "Rational Agents"
+    },
+    {
+     "ref": "22.10",
+     "title": "Motion And Manipulation"
+    },
+    {
+     "ref": "22.11",
+     "title": "Tools & Techniques Of Artificial Intelligence"
+    },
+    {
+     "ref": "22.12",
+     "title": "Artificial Intelligence And Morality"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 0,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 0,
+    "Keywords": 0,
+    "Check Your Progress": 0,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 0,
+    "pct": 2,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 1024
+  },
+  {
+   "unit": 23,
+   "title": "Business Analytics as Management Tool",
+   "module": "D",
+   "module_title": "Emerging Business Solutions",
+   "pages": 62,
+   "chars": 99089,
+   "sections": [
+    {
+     "ref": "23.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "23.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "23.2",
+     "title": "Essentials Of Business Analytics"
+    },
+    {
+     "ref": "23.3",
+     "title": "Types Of Analytics"
+    },
+    {
+     "ref": "23.4",
+     "title": "Elements Of Business Analytics"
+    },
+    {
+     "ref": "23.5",
+     "title": "Excel Proficiency"
+    },
+    {
+     "ref": "23.6",
+     "title": "Big Data Analytics"
+    },
+    {
+     "ref": "23.7",
+     "title": "Web And Mobile Analytics"
+    },
+    {
+     "ref": "23.8",
+     "title": "Comparing Web Vs Mobile Analytics"
+    },
+    {
+     "ref": "23.9",
+     "title": "Importance Of Business Analytics"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 2,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 2,
+    "Keywords": 2,
+    "Check Your Progress": 2,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 4,
+    "pct": 0,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 1060
+  },
+  {
+   "unit": 24,
+   "title": "Green and Sustainable Financing",
+   "module": "D",
+   "module_title": "Emerging Business Solutions",
+   "pages": 68,
+   "chars": 122657,
+   "sections": [
+    {
+     "ref": "24.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "24.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "24.2",
+     "title": "Iso Standards For Green Finance"
+    },
+    {
+     "ref": "24.3",
+     "title": "Building Green Finance Iso"
+    },
+    {
+     "ref": "24.4",
+     "title": "International Best Practices Towards Green Finance"
+    },
+    {
+     "ref": "24.5",
+     "title": "Public Policy In India"
+    },
+    {
+     "ref": "24.6",
+     "title": "Progress Of Green Finance In India"
+    },
+    {
+     "ref": "24.7",
+     "title": "Challenges And Way Forward"
+    },
+    {
+     "ref": "24.8",
+     "title": "Growth Of Regulatory Framework"
+    },
+    {
+     "ref": "24.9",
+     "title": "National Efforts Towards Green And Sustainable Financing"
+    },
+    {
+     "ref": "24.10",
+     "title": "Rbi Views On Climate Risk And Sustainable Finance"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 1,
+    "Keywords": 1,
+    "Check Your Progress": 1,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 0,
+    "pct": 14,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 1122
+  },
+  {
+   "unit": 25,
+   "title": "Special Purpose Acquisition Companies",
+   "module": "D",
+   "module_title": "Emerging Business Solutions",
+   "pages": 28,
+   "chars": 40581,
+   "sections": [
+    {
+     "ref": "25.0",
+     "title": "Objectives"
+    },
+    {
+     "ref": "25.1",
+     "title": "Introduction"
+    },
+    {
+     "ref": "25.2",
+     "title": "Advantages Of Spac"
+    },
+    {
+     "ref": "25.3",
+     "title": "Disadvantages Of Spac"
+    },
+    {
+     "ref": "25.4",
+     "title": "Spac Formation & Timelines"
+    },
+    {
+     "ref": "25.5",
+     "title": "The Spac Merger"
+    },
+    {
+     "ref": "25.6",
+     "title": "Stakeholders"
+    },
+    {
+     "ref": "25.7",
+     "title": "Characteristics Of Spac"
+    },
+    {
+     "ref": "25.8",
+     "title": "Process Parent Company Special Purpose Acquisition Company Target Company"
+    },
+    {
+     "ref": "25.9",
+     "title": "Spac Capital Structure"
+    },
+    {
+     "ref": "25.10",
+     "title": "Trust Account"
+    },
+    {
+     "ref": "25.11",
+     "title": "Warrants"
+    },
+    {
+     "ref": "25.12",
+     "title": "Forward Purchase"
+    },
+    {
+     "ref": "25.13",
+     "title": "Ipo Agreements"
+    },
+    {
+     "ref": "25.14",
+     "title": "De-Spac Process"
+    }
+   ],
+   "markers": {
+    "STRUCTURE": 1,
+    "OBJECTIVES": 1,
+    "Let Us Sum Up": 0,
+    "Keywords": 0,
+    "Check Your Progress": 0,
+    "Solution": 0
+   },
+   "math": {
+    "eq": 0,
+    "pct": 16,
+    "delta": 0,
+    "times": 0
+   },
+   "line_start": 1190
+  }
+ ],
+ "found": 25,
+ "expected": 25,
+ "missing": []
+}

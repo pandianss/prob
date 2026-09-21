@@ -1,0 +1,24 @@
+# --- Licensed source material. Never committed, never pushed. ---
+# The IIBF/Macmillan courseware and anything that reproduces its content.
+# BLUEPRINT.md 3.6: derived content only; the source itself is not ours to
+# redistribute, and a public repo is redistribution.
+caiib/*.txt
+caiib/*.pdf
+*.docx
+
+# Extraction artefacts that carry substantial book content verbatim:
+# worked-example figures, reconstructed tables, and the book's own questions.
+content/gold/
+content/abfm_tables.json
+content/abfm_formulas.json
+content/_*.txt
+
+# --- Ordinary noise ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

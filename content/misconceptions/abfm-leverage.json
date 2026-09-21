@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ABFM.B.LEV.TAX-APPLIED-TO-DFL",
+    "statement": "Learner multiplies the degree of financial leverage by (1 - tax rate), treating DFL as a post-tax quantity. Tax scales EPS and EBT by the same factor, so it cancels out of a ratio of percentage changes and never enters DFL.",
+    "concept": "ratio-of-percentage-changes",
+    "signature": [
+      "selects an option equal to the correct DFL multiplied by (1 - t)",
+      "error magnitude tracks the tax rate supplied in the stem"
+    ],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "contrast-cases",
+    "canned_hint_l1": "Hold the tax rate fixed and move EBIT by 10%. Does the percentage change in EPS depend on that rate at all?",
+    "canned_hint_l2": "Tax multiplies both EPS and EBT by the same factor. What happens to a constant that appears in both halves of a ratio?",
+    "worked_example_ref": "we/abfm/lev/dfl-tax-cancels",
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.DFL-DOL-SWAPPED",
+    "statement": "Learner computes Contribution / EBIT when asked for financial leverage, or EBIT / EBT when asked for operating leverage. The two degrees are confused because both are ratios built from EBIT.",
+    "concept": "ratio-of-percentage-changes",
+    "signature": ["selects the value of the other leverage measure"],
+    "prerequisites": ["contribution-and-cost-behaviour"],
+    "remediation_strategy": "contrast-cases",
+    "canned_hint_l1": "Which risk is this measuring - the cost structure above EBIT, or the financing below it?",
+    "canned_hint_l2": "Operating leverage looks upward to contribution and fixed costs. Financial leverage looks downward to interest.",
+    "worked_example_ref": "we/abfm/lev/dol-vs-dfl",
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE",
+    "statement": "Learner subtracts interest from the numerator as well as the denominator, computing (EBIT - Interest) / (EBIT - Interest) style expressions, or nets interest out of EBIT before forming the ratio.",
+    "concept": "ratio-of-percentage-changes",
+    "signature": ["selects a value at or near 1.00 regardless of the figures given"],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "contrast-cases",
+    "canned_hint_l1": "What does the numerator represent before any interest is paid?",
+    "canned_hint_l2": "EBIT is the top line of this ratio, untouched. Interest is subtracted only once, in the denominator.",
+    "worked_example_ref": "we/abfm/lev/dfl-tax-cancels",
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  }
+]

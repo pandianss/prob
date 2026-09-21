@@ -1,0 +1,64 @@
+{
+  "note": "Our delivery graph (BLUEPRINT.md 2.5). Prerequisite edges are hypotheses until response data confirms them - start shallow, earn depth.",
+  "certification": "ABFM",
+  "concepts": [
+    {
+      "id": "ratio-arithmetic",
+      "title": "Ratios and percentage change",
+      "prereqs": [],
+      "serves_nodes": ["ABFM.B.8"],
+      "status": "proposed"
+    },
+    {
+      "id": "contribution-and-cost-behaviour",
+      "title": "Contribution, fixed cost and the P/V ratio",
+      "prereqs": ["ratio-arithmetic"],
+      "serves_nodes": ["ABFM.B.8.4", "ABFM.B.8.5", "ABFM.B.12.1"],
+      "note": "Serves operating leverage in Unit 8 AND cost-volume-profit in Unit 12. The book teaches it in Unit 12 but uses it in Unit 8's own exercises - the inversion that motivates 2.5.",
+      "status": "proposed"
+    },
+    {
+      "id": "ratio-of-percentage-changes",
+      "title": "Elasticity: one percentage change over another",
+      "prereqs": ["ratio-arithmetic"],
+      "serves_nodes": ["ABFM.B.8.2", "ABFM.B.8.3", "ABFM.B.8.6"],
+      "status": "proposed"
+    },
+    {
+      "id": "time-value-and-discounting",
+      "title": "Discounting a future cash flow",
+      "prereqs": ["ratio-arithmetic"],
+      "serves_nodes": ["ABFM.B.9", "ABFM.B.10", "ABFM.C.14", "ABFM.D.19"],
+      "note": "Taught once, reaches four units.",
+      "status": "proposed"
+    },
+    {
+      "id": "cash-flow-estimation",
+      "title": "Building a project cash-flow series",
+      "prereqs": ["time-value-and-discounting"],
+      "serves_nodes": ["ABFM.B.9", "ABFM.B.10", "ABFM.C.14"],
+      "status": "proposed"
+    },
+    {
+      "id": "risk-adjustment",
+      "title": "Sensitivity, scenario and decision-tree adjustment",
+      "prereqs": ["cash-flow-estimation"],
+      "serves_nodes": ["ABFM.B.11", "ABFM.B.10", "ABFM.C.14"],
+      "status": "proposed"
+    },
+    {
+      "id": "relative-valuation-multiples",
+      "title": "Valuing by comparison",
+      "prereqs": ["ratio-arithmetic"],
+      "serves_nodes": ["ABFM.C.13", "ABFM.C.15", "ABFM.C.16"],
+      "status": "proposed"
+    },
+    {
+      "id": "deal-arithmetic",
+      "title": "Exchange ratio and EPS accretion",
+      "prereqs": ["relative-valuation-multiples"],
+      "serves_nodes": ["ABFM.C.17", "ABFM.C.18"],
+      "status": "proposed"
+    }
+  ]
+}
