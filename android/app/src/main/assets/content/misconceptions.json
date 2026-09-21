@@ -1,0 +1,44 @@
+[
+ {
+  "id": "ABFM.B.LEV.TAX-APPLIED-TO-DFL",
+  "statement": "Learner multiplies the degree of financial leverage by (1 - tax rate), treating DFL as a post-tax quantity. Tax scales EPS and EBT by the same factor, so it cancels out of a ratio of percentage changes and never enters DFL.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Before the number - which two quantities is financial leverage comparing?",
+   "Hold the tax rate fixed and move EBIT by 10%. Does the percentage change in EPS depend on that rate at all?",
+   "Tax multiplies both EPS and EBT by the same factor. What happens to a constant that appears in both halves of a ratio?",
+   "Work it as EBIT divided by (EBIT minus interest). The tax rate is not in that expression, and it never was."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.DFL-DOL-SWAPPED",
+  "statement": "Learner computes Contribution / EBIT when asked for financial leverage, or EBIT / EBT when asked for operating leverage. The two degrees are confused because both are ratios built from EBIT.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Which risk is this question asking about - the cost structure above EBIT, or the financing below it?",
+   "Operating leverage looks upward, to contribution and fixed costs. Financial leverage looks downward, to interest. Which way does this one look?",
+   "Financial leverage is EBIT over EBT. Operating leverage is contribution over EBIT.",
+   "Check which figure you put on top. If interest appears anywhere in your working, you are computing financial leverage."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE",
+  "statement": "Learner subtracts interest from the numerator as well as the denominator, computing (EBIT - Interest) / (EBIT - Interest) style expressions, or nets interest out of EBIT before forming the ratio.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "What does the numerator of this ratio represent, before any interest is paid?",
+   "You subtracted interest twice. Where should it appear - the top, the bottom, or both?",
+   "EBIT is the top line here, untouched. Interest comes off once, in the denominator.",
+   "A ratio whose numerator and denominator are the same expression is always 1.00, whatever the figures. That is the signal you subtracted twice."
+  ]
+ }
+]

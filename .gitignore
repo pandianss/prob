@@ -22,3 +22,9 @@ venv/
 Thumbs.db
 .idea/
 .vscode/
+
+# Android build output (the android/ module has its own .gitignore too)
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties

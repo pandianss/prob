@@ -79,10 +79,11 @@ def main():
             if entry.get('status') == 'proposed' and entry.get('prevalence') is not None:
                 err(path, u'%s is proposed but carries a prevalence - a guess '
                           u'must not be stored as a measurement (3.7)' % mid)
-            for field in ('canned_hint_l1', 'canned_hint_l2'):
-                if not entry.get(field):
-                    err(path, u'%s has no %s - offline tutoring depends on it (8)'
-                        % (mid, field))
+            rungs = entry.get('ladder') or [x for x in (entry.get('canned_hint_l1'),
+                                                        entry.get('canned_hint_l2')) if x]
+            if len(rungs) < 2:
+                err(path, u'%s has fewer than 2 authored ladder rungs - the tutor '
+                          u'IS the ladder, there is no model to fall back on (2.3)' % mid)
 
     # 2.5 - the concept graph is a first-class artefact, not inferred
     concepts, graph = set(), {}
