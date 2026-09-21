@@ -28,6 +28,7 @@ v1 was strong on pedagogy and Android architecture, and silent on the three thin
 | Pipeline assumed human reviewers; the system must run unattended | §3.7 Autonomous operation |
 | Chapter order treated as teaching order, though the source inverts its own prerequisites | §2.5 Syllabus spine vs concept graph |
 | Lossy source extraction treated as a blocker rather than a repairable, provable stage | §3.8 Source repair |
+| A runtime chatbot that could hallucinate uncaught, cost per session, and need a network | §2.3 Authored ladder |
 
 Cut from v1 scope: Agentic OS / MCP AppFunctions, Rive, XP/streak gamification, on-device Gemini Nano. All are v2+ candidates; none earn their cost before the core loop is proven. Rationale in §10.
 
@@ -91,33 +92,61 @@ reviewed_by: ...
 last_verified: 2026-09-01
 ```
 
-`canned_hint_l1/l2` matter more than they look. They are **authored at content time, not generated at runtime**, which is what makes offline tutoring work on every device (§8) and puts a floor under quality when the model is unavailable or wrong.
+The authored rungs are the tutor, not a fallback for it (§2.3). Because they are written at content time rather than generated in session, tutoring works on every device with no inference and no network (§8), and nothing a learner sees can be hallucinated in the moment.
 
 Target catalogue size: ~40–60 misconceptions per JAIIB subject; ~2,000 across the full IIBF surface. That is a two-year asset, not a sprint.
 
-### 2.3 Socratic policy as a state machine
+### 2.3 Socratic policy: an authored ladder, not a conversation
 
-v1 said "never reveal the answer" and "escalate after 5 turns." Those conflict, and the conflict is where learners get abandoned. Explicit policy:
+v1 said "never reveal the answer" and "escalate after 5 turns." Those conflict, and the conflict is where learners get abandoned.
+
+**P0 resolves it by removing the conversation.** The ladder is authored at content time, one rung per misconception, and no model runs during a learner's session.
 
 ```
 PROBE ──► NARROW ──► HINT_L1 ──► HINT_L2 ──► WORKED_EXAMPLE ──► RESOLVE
   │         │           │           │                              ▲
   └─────────┴───────────┴───────────┴──── escalation triggers ─────┘
+      (authored per misconception, selected by which distractor was chosen)
 ```
 
-**Turn budget:** 5 exchanges (JAIIB/certificates), 8 (CAIIB/diplomas). Hard ceiling; on exhaustion, advance one state.
+#### Why the runtime model goes
 
-**Escalation triggers — any one advances the state immediately:**
-1. Two consecutive turns with no measurable progress (learner's reasoning does not move toward the target proposition).
-2. Explicit request: "just tell me", "I don't know", "skip".
-3. Session-length signal: learner is >6 min into a session they entered from a commute-hours context.
-4. Repeat encounter: this is the learner's 3rd+ attempt on this misconception in 14 days — Socratic probing has demonstrably failed here; go straight to `WORKED_EXAMPLE`.
+The free-text tutor was the weakest model use in the design, once the rest of the architecture settled around it:
 
-**De-escalation:** never. Once at `HINT_L2`, do not retreat to `PROBE` within the session; it reads as withholding.
+- It is **the only place a hallucination reaches a learner uncaught**. Authoring-time errors are caught by the &sect;3.7 gauntlet; a runtime turn has no gate in front of it.
+- Its cost is **recurring per session**, against authoring's one-time cost per item &mdash; and it recurs on exactly the interaction that happens most.
+- &sect;4's no-assertion rule already forbids it from stating any fact, so it can only ask questions. The questions worth asking for a known misconception are the same every time, which means they can be written once.
+- &sect;8's device tiers mean a network-dependent tutor is unavailable for a large share of sessions anyway. The authored ladder was already the fallback; making it the product removes an entire class of degraded state.
 
-**`RESOLVE` always fires.** Every session terminates with the correct proposition stated plainly plus its citation (§4). "Zero answer revelation" in v1 was an over-rotation: it is a rule about *pacing*, not about ever leaving a learner without the answer. A banker who closes the app still not knowing the depreciation base is a failure, not a Socratic success.
+The misconception catalogue (&sect;2.2) already carries `canned_hint_l1` and `canned_hint_l2`; this promotes them from fallback to primary and adds the two probing rungs beside them.
 
-**Frustration detection:** deferred. v1 leaned on a sentiment signal and a "44.3% of interventions" figure I could not source. Triggers 1–4 are behavioural, cheap, and don't require inferring emotion from text. Revisit only if the pilot shows abandonment that the behavioural triggers miss.
+#### What is lost, and why that is acceptable for P0
+
+A learner who types something unanticipated gets a ladder rung rather than a response to what they actually said. That is a real loss, and it is the argument for putting the model back later.
+
+But the claim in &sect;1 is that a *misconception-mapped distractor* produces durable learning. It is not a claim about conversation. Testing the wedge with a free-text tutor in the loop confounds the two: a retention lift could come from either, and we would not know which. **The authored ladder is the cleaner experiment as well as the cheaper product.** If P0 clears the +12pp bar without any runtime model, free text becomes an enhancement to evaluate on its own merits. If it misses, adding a chatbot to a weak misconception model would not have saved it.
+
+#### Selection, budget and escalation
+
+**Rung selection is deterministic**: the chosen distractor names a misconception, and that misconception owns its ladder. No inference, no matching, no ambiguity.
+
+**Budget:** the learner advances a rung per tap, and may skip to any later rung at will. There is no turn budget to exhaust because there are no turns to spend.
+
+**Escalation triggers &mdash; any one jumps the ladder immediately:**
+1. Explicit request: a permanent **Show me** control, live from the first rung.
+2. Dwell: no interaction for 25 seconds on a rung.
+3. Session-length: more than 6 minutes into a session entered during commute hours.
+4. Repeat encounter: 3rd+ attempt on this misconception in 14 days &mdash; probing has demonstrably failed here, so open at `WORKED_EXAMPLE`.
+
+**De-escalation:** never. Once past `HINT_L2`, do not return to `PROBE` within a session; it reads as withholding.
+
+**`RESOLVE` always fires.** Every session ends with the correct proposition stated plainly and its citation (&sect;4). "Zero answer revelation" in v1 was an over-rotation: it governs *pacing*, not whether the learner ever gets the answer. A banker who closes the app still not knowing the depreciation base is a failure, not a Socratic success.
+
+**Frustration detection:** dropped. v1 leaned on a sentiment signal and a "44.3% of interventions" figure I could not source. With no free text there is nothing to infer sentiment from, and triggers 1&ndash;4 are behavioural and cheap.
+
+#### When the model comes back
+
+Three conditions, all of which are measurements rather than opinions: P0 clears its retention bar; learner reports (&sect;3.7) show the ladder failing on identifiable misconceptions rather than at random; and the no-assertion rule holds under adversarial testing (E2). At that point free text returns as an **extra rung past `HINT_L2`**, for the minority of sessions that reach it, online only &mdash; never as the first thing a learner meets.
 
 ### 2.4 Remediation strategies
 
@@ -515,9 +544,9 @@ Versioned corpus, clause-addressable: RBI master circulars and directions, BR Ac
 Two different risk regimes, deliberately separated:
 
 - **Authoring time** — large model, expensive, generous context, generating items and explanations. Every output passes the §3.7 gauntlet: independent second-model verification against retrieved source, with discard as the only failure mode. Hallucination here is caught, or the item does not exist.
-- **Runtime** — constrained, grounded, low-temperature, no new facts, operating on a pre-verified item. Hallucination here reaches a learner uncaught.
+- **Runtime** — **no model at all in P0** (§2.3). What a learner meets was authored and verified before it shipped, so there is no runtime hallucination surface left to constrain. This is the reason the two regimes stopped needing to be balanced against each other: one of them was removed.
 
-They should not share prompts, and probably shouldn't share model configs.
+When free text returns (§2.3) it comes back under the no-assertion rule, as a late rung only, and it must share neither prompts nor model configuration with the authoring path.
 
 ---
 
@@ -569,11 +598,11 @@ v1 assumed Gemini Nano via AICore. AICore is on a narrow slice of recent flagshi
 
 | Tier | Device | Online | Offline |
 |---|---|---|---|
-| **A** | AICore-capable flagship | Cloud tutor | On-device hints (Nano) — v2 |
-| **B** | Mid-range, ≥4GB | Cloud tutor | **Authored hints L1/L2 + worked example** |
-| **C** | Low-end / metered data | Cloud tutor, aggressive cache | **Authored hints L1/L2 + worked example** |
+| **A** | AICore-capable flagship | Authored ladder | Authored ladder — identical |
+| **B** | Mid-range, ≥4GB | Authored ladder | Authored ladder — identical |
+| **C** | Low-end / metered data | Authored ladder | Authored ladder — identical |
 
-**The key move:** because `canned_hint_l1/l2` and worked examples are authored at content time (§2.2), *every tier has a working offline tutor with zero on-device inference.* Offline is degraded — no free-text dialogue — but it is never broken, and it is never wrong. That is a better offline story than v1's, and it ships a year earlier.
+**The key move:** with the ladder authored at content time (§2.3), *every tier behaves identically, online or off, with no inference anywhere.* There is no degraded mode to design, no tier-dependent quality, and nothing a learner meets that was generated in the moment. The three columns above are the same column three times, which is exactly the point.
 
 Content packs: per-subject, downloadable on Wi-Fi, ~20–40MB (items + hints + worked examples + the cited clause excerpts). Delta updates when the staleness watcher fires.
 
@@ -605,7 +634,7 @@ Largely as v1 — it was sound. Deltas noted.
 - **Agentic OS / MCP AppFunctions.** Lock-screen voice queries are a demo, not retention. Zero evidence any learner wants this. v3 at the earliest.
 - **Rive / Compose Canvas visualisations.** Yield-curve animations are expensive to author and orthogonal to the wedge. The four §2.4 rendering components cover real remediation need.
 - **XP, streaks, SDT framing.** Streaks mostly optimise for streak-preservation. Revisit with data; if we add motivation mechanics, make them exam-date-anchored progress ("you are on track for 12 March"), which is honest and more motivating for adults.
-- **On-device Gemini Nano.** §8. Optimisation, not foundation.
+- **On-device Gemini Nano, and the cloud tutor with it.** §2.3. With the ladder authored, P0 runs no model in a learner session at all — which removes the hallucination surface, the per-session cost and the offline degraded mode in one move.
 - **Media3 video.** v1's worked-example videos cost more per minute than anything else in the content pipeline. Static contrast-cases first; add video only where the pilot shows static explanations failing.
 
 Each of these is a real feature. None of them is the thing that makes this work.
