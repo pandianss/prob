@@ -575,7 +575,11 @@ v1's "≥80%" is undefined without knowing the difficulty of what was answered �
 **Per-node ability θ**, 2PL: `P(correct) = 1 / (1 + exp(-a(θ - b)))`.
 
 - **Mastery** at node `n`: `θ_n ≥ b_exam(n)` with `SE(θ_n) < 0.35`, where `b_exam(n)` is the calibrated difficulty of that node's typical IIBF exam item.
-- **Item selection**: serve items where predicted `P(correct) ∈ [0.70, 0.85]`. High enough to sustain engagement on a commute, low enough to be effortful. Not maximum-information selection — that targets 0.5 and feels brutal on a phone at 8am.
+- **Item selection**: serve items where predicted `P(correct) ∈ [0.70, 0.85]`. Not maximum-information selection — that targets 0.5 and feels brutal on a phone at 8am.
+
+  **What that costs, measured** (`tools/simulate.py`, 400 synthetic learners): the band needs a median **48 items** to reach mastery against **33** for maximum-information selection — about 45% more — while the learner experiences **79% accuracy instead of 50%**. Both reach mastery for 100% of learners and end at comparable standard error, so the trade is items-per-concept bought with engagement, not accuracy of measurement.
+
+  That 15-item gap is a **content-volume decision, not just a UX one**: it sets how many items each concept needs before the catalogue can carry a learner to mastery. Budget for it.
 - **Below `θ - 1.0` on a node's prerequisites**: stop serving the node. Route to the prerequisite. v1's "revert to simple language" treats a knowledge-structure problem as a tone problem.
 - **Misconception state is separate from θ.** A learner can have adequate θ and still reliably hold one specific wrong belief. Track per-misconception: `active` → `remediated` (2 consecutive correct on items with that distractor, ≥7 days apart) → `stale` (no encounter in 60 days, re-test).
 
@@ -585,7 +589,25 @@ v1's "≥80%" is undefined without knowing the difficulty of what was answered �
 
 Replace v1's fixed 0/1/4/10/30 ladder with **FSRS** (open-source, well-validated, materially better than SM-2), with two banking-specific modifications:
 
-1. **Exam-date awareness.** The learner supplies their exam date. As it approaches, the objective shifts from long-term retention to maximising expected recall *on that date* — intervals compress and the scheduler stops deferring items past the exam. This is the single most-requested behaviour in exam prep and most SRS implementations get it wrong.
+1. **Exam-date awareness — corrected by measurement.** The learner supplies their exam date, and the scheduler never lets an interval run past it.
+
+   The original specification here said intervals should *compress* as the exam approached. `tools/simulate.py` measured that against an independent forgetting model and it **loses at every horizon a candidate cares about**:
+
+   | Days to exam | Plain | Compressed | Hard clamp |
+   |---|---|---|---|
+   | 5 | **0.461** | 0.345 | 0.366 |
+   | 10 | **0.449** | 0.354 | 0.362 |
+   | 21 | **0.548** | 0.416 | 0.417 |
+   | 47 | **0.725** | 0.597 | 0.562 |
+   | 90 | 0.760 | **0.827** | 0.707 |
+
+   *(mean recall on exam day; fixed review budget throughout)*
+
+   Compression pulls every review earlier, so less has been forgotten when it happens, so each review consolidates less. Under a fixed session budget that trade is simply bad: **cramming harder near the exam costs recall on the day.** The intuition was wrong, and it was wrong in the direction that feels most obviously right.
+
+   It pays only past ~8 weeks, where the mechanism is different — plain scheduling lets intervals grow so long that items fall due after the paper. So the rule is **never defer past the exam**, applied smoothly, not **compress near it**.
+
+   Hard-clamping to the eve of the exam was worst of all (0.562 at 47 days): it piles every item onto one day, which exceeds what a session can hold, and the surplus is never reviewed at all. Session capacity, not interval length, is the binding constraint.
 2. **Interleaving constraint.** Within a session, no two consecutive items from the same **concept** (§2.5) — not the same syllabus node, since one concept can span several nodes and interleaving those would not actually vary the retrieval. Interleaving is one of the better-evidenced effects in the literature and it is nearly free to implement.
 
 **Session shape:** 5–10 minutes, 8–12 items, one of which is a field-calibration item. Fully resumable — the Socratic session state persists, so a session interrupted by a customer at the counter resumes intact.

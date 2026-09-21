@@ -81,5 +81,8 @@ dependencies {
     // back towards a runtime that can be wrong.
 
     testImplementation(libs.junit)
+    // org.json for the golden-vector test; Android ships a stub of it, so the
+    // JVM test source set needs the real implementation.
+    testImplementation("org.json:json:20240303")
     testImplementation(libs.kotlinx.coroutines.test)
 }

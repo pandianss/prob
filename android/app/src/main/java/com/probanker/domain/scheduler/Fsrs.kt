@@ -104,12 +104,31 @@ class Fsrs @Inject constructor(
         (stability / FACTOR) * (TARGET_RETENTION.pow(1 / DECAY) - 1)
 
     /**
-     * Exam-date awareness (BLUEPRINT 7, modification 1).
+     * Exam-date awareness (BLUEPRINT 7, modification 1) - corrected.
      *
-     * As the exam approaches the objective stops being long-term retention and
-     * becomes recall on one specific day, so intervals compress and nothing is
-     * ever scheduled past the paper. Most SRS implementations get this wrong,
-     * and it is the single most-requested behaviour in exam prep.
+     * The original design compressed intervals as the exam approached. The
+     * simulation in tools/simulate.py measured that against an independent
+     * forgetting model and it LOSES at every horizon a candidate cares about:
+     *
+     *     days to exam      plain    compressed
+     *      5                0.461      0.345
+     *     10                0.449      0.354
+     *     21                0.548      0.416
+     *     47                0.725      0.597
+     *     90                0.760      0.827
+     *
+     * Compression pulls each review earlier, so less has been forgotten when it
+     * happens, so the review consolidates less. With a fixed session budget that
+     * trade is simply bad - cramming harder near the exam costs recall on the day.
+     *
+     * It only pays past ~8 weeks, and there the mechanism is different: plain
+     * scheduling lets intervals grow so long that items fall due after the paper.
+     * So the rule is not "compress near the exam" but "never let an interval run
+     * past the exam", applied smoothly.
+     *
+     * Hard-clamping to the eve of the exam was worse than either (0.562 at 47
+     * days): it piles every item onto one day, which exceeds what a session can
+     * hold, and the surplus is never reviewed at all.
      */
     private fun clampToExam(now: Long, idealDays: Double): Long {
         val ideal = now + (idealDays * TimeUnit.DAYS.toMillis(1)).toLong()
@@ -119,13 +138,15 @@ class Fsrs @Inject constructor(
         val daysLeft = (exam - now).toDouble() / TimeUnit.DAYS.toMillis(1)
         if (daysLeft <= 0) return ideal.coerceAtLeast(floor)
 
-        // Compress smoothly rather than only clipping at the boundary: an item
-        // due the day before the exam is worth less than one seen twice in the
-        // final week.
-        val compression = (daysLeft / (daysLeft + idealDays)).coerceIn(0.15, 1.0)
-        val compressed = now + (idealDays * compression * TimeUnit.DAYS.toMillis(1)).toLong()
-        val latest = exam - TimeUnit.DAYS.toMillis(1)
-        return compressed.coerceAtLeast(floor).coerceAtMost(maxOf(latest, floor))
+        // Inside the window: leave the interval alone. Spacing is doing its job
+        // and pulling the review forward would only waste it.
+        if (idealDays <= daysLeft) return ideal.coerceAtLeast(floor)
+
+        // Would land after the paper: bring it back smoothly, never by clamping
+        // everything onto one day.
+        val factor = (daysLeft / (daysLeft + idealDays)).coerceIn(0.15, 1.0)
+        val adjusted = now + (idealDays * factor * TimeUnit.DAYS.toMillis(1)).toLong()
+        return adjusted.coerceAtLeast(floor)
     }
 
     /** Exposed for the simulation harness; not used by the app. */

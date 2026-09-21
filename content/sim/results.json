@@ -1,0 +1,105 @@
+{
+ "ability": {
+  "band": {
+   "mean_abs_error": 0.3139501589835284,
+   "mean_se": 0.3409529024451495,
+   "mastered_pct": 100.0,
+   "median_items_to_mastery": 48.0,
+   "experienced_accuracy": 0.7896
+  },
+  "maxinfo": {
+   "mean_abs_error": 0.2282204740514366,
+   "mean_se": 0.2832649839233824,
+   "mastered_pct": 100.0,
+   "median_items_to_mastery": 33.0,
+   "experienced_accuracy": 0.5004
+  }
+ },
+ "exam": {
+  "plain_fsrs": {
+   "recall_on_exam_day": 0.7268605288572431,
+   "reviews": 574.935
+  },
+  "naive_compression": {
+   "recall_on_exam_day": 0.5933322869018931,
+   "reviews": 575.97
+  },
+  "no_defer_past_exam": {
+   "recall_on_exam_day": 0.5560814447187006,
+   "reviews": 575.0
+  },
+  "exam_risk_priority": {
+   "recall_on_exam_day": 0.5300785036508797,
+   "reviews": 576.0
+  }
+ },
+ "horizon": {
+  "5": {
+   "plain": 0.46097204638715794,
+   "naive": 0.3445288614326798,
+   "no_defer": 0.3657306457953455
+  },
+  "10": {
+   "plain": 0.44929190159940097,
+   "naive": 0.35391888692027057,
+   "no_defer": 0.36172090987103067
+  },
+  "21": {
+   "plain": 0.5478520169890437,
+   "naive": 0.4162413823262001,
+   "no_defer": 0.4171558604367812
+  },
+  "47": {
+   "plain": 0.7245872034705543,
+   "naive": 0.5969814436543995,
+   "no_defer": 0.5623702094675563
+  },
+  "90": {
+   "plain": 0.7603582043892977,
+   "naive": 0.8273374563103323,
+   "no_defer": 0.7073417145844567
+  }
+ },
+ "golden": {
+  "update_sequence": [
+   {
+    "b": 0.0,
+    "correct": true,
+    "theta": 2.0,
+    "se": 2.0
+   },
+   {
+    "b": 0.5,
+    "correct": true,
+    "theta": 2.457039,
+    "se": 1.582829
+   },
+   {
+    "b": 1.0,
+    "correct": false,
+    "theta": 0.988693,
+    "se": 1.345497
+   },
+   {
+    "b": 0.8,
+    "correct": true,
+    "theta": 1.554785,
+    "se": 1.117919
+   },
+   {
+    "b": 1.2,
+    "correct": true,
+    "theta": 1.950218,
+    "se": 0.979423
+   }
+  ],
+  "target_band_at_zero": {
+   "easy_end": -1.734601,
+   "hard_end": -0.847298
+  },
+  "p_at_band_ends": {
+   "easy": 0.85,
+   "hard": 0.7
+  }
+ }
+}

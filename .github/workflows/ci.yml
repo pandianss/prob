@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  content:
+    name: Content invariants
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # The invariants in BLUEPRINT.md 3.1 / 3.6 / 3.7 only bind if something
+      # runs them. With no human reviewer in the pipeline, this IS the review.
+      - name: Validate content
+        run: python tools/validate.py
+
+      # A validator that only ever passes is not evidence. Break the content on
+      # purpose and confirm each class of violation is still caught.
+      - name: Prove the validator still catches violations
+        run: python tools/validate_selftest.py
+
+      # The scheduler claims in 6 and 7 are measured, not asserted. This also
+      # regenerates the golden vectors the Kotlin tests pin against.
+      - name: Scheduler simulation
+        run: python tools/simulate.py
+
+      - name: Golden vectors unchanged
+        run: git diff --exit-code android/app/src/test/resources/golden_irt.json
+
+      - name: Content pack builds
+        run: |
+          python tools/build_pack.py
+          git diff --exit-code android/app/src/main/assets/content/

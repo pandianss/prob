@@ -1,0 +1,42 @@
+{
+ "update_sequence": [
+  {
+   "b": 0.0,
+   "correct": true,
+   "theta": 2.0,
+   "se": 2.0
+  },
+  {
+   "b": 0.5,
+   "correct": true,
+   "theta": 2.457039,
+   "se": 1.582829
+  },
+  {
+   "b": 1.0,
+   "correct": false,
+   "theta": 0.988693,
+   "se": 1.345497
+  },
+  {
+   "b": 0.8,
+   "correct": true,
+   "theta": 1.554785,
+   "se": 1.117919
+  },
+  {
+   "b": 1.2,
+   "correct": true,
+   "theta": 1.950218,
+   "se": 0.979423
+  }
+ ],
+ "target_band_at_zero": {
+  "easy_end": -1.734601,
+  "hard_end": -0.847298
+ },
+ "p_at_band_ends": {
+  "easy": 0.85,
+  "hard": 0.7
+ }
+}
