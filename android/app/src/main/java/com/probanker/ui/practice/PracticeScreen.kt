@@ -22,7 +22,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -57,17 +56,16 @@ fun PracticeScreen(
         viewModel.effects.collect { if (it is PracticeEffect.SessionComplete) onFinished() }
     }
 
-    Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
-        Column(Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
-            SessionProgress(state)
-            Spacer(Modifier.height(8.dp))
-            when (state.phase) {
-                Phase.Loading -> Unit
-                Phase.Answering -> AnswerPane(state, viewModel)
-                Phase.Ladder -> LadderPane(state, viewModel)
-                Phase.Resolved -> ResolvePane(state, viewModel)
-                Phase.SessionDone -> DonePane(onFinished)
-            }
+    // Surface and window insets belong to the nav host.
+    Column(Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
+        SessionProgress(state)
+        Spacer(Modifier.height(8.dp))
+        when (state.phase) {
+            Phase.Loading -> Unit
+            Phase.Answering -> AnswerPane(state, viewModel)
+            Phase.Ladder -> LadderPane(state, viewModel)
+            Phase.Resolved -> ResolvePane(state, viewModel)
+            Phase.SessionDone -> DonePane(onFinished)
         }
     }
 }
