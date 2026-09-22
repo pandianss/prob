@@ -1,21 +1,21 @@
 [versions]
-# Verify these against the current releases when you first open the project in
-# Android Studio - it will flag anything stale.
-agp = "8.7.3"
-kotlin = "2.1.0"
-ksp = "2.1.0-1.0.29"
-hilt = "2.53.1"
-androidxCore = "1.15.0"
-lifecycle = "2.8.7"
-activityCompose = "1.9.3"
-composeBom = "2024.12.01"
-navigation = "2.8.5"
-room = "2.6.1"
-datastore = "1.1.1"
-work = "2.10.0"
-hiltNavCompose = "1.2.0"
-kotlinxSerialization = "1.7.3"
-coroutines = "1.9.0"
+# Resolved against the live repositories on 2026-09-22 and against the SDK
+# actually installed here (platform 37, build-tools 36, JDK 25).
+agp = "9.4.1"
+kotlin = "2.4.20"
+ksp = "2.3.12"
+hilt = "2.60.1"
+androidxCore = "1.19.0"
+lifecycle = "2.11.0"
+activityCompose = "1.13.0"
+composeBom = "2026.09.00"
+navigation = "2.10.1"
+room = "2.8.5"
+datastore = "1.2.1"
+work = "2.11.2"
+hiltNavCompose = "1.4.0"
+kotlinxSerialization = "1.9.0"
+coroutines = "1.10.2"
 junit = "4.13.2"
 
 [libraries]

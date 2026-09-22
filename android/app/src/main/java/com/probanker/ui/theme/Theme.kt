@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
@@ -100,19 +101,39 @@ private val DarkScheme = darkColorScheme(
  *  - Literata: reading body. Drawn for long-form screen reading, which is what
  *    a commuter does for several hundred words at a stretch.
  *
- * Drop the .ttf files into res/font/ before first build.
+ * Both families ship as variable fonts (the only form Google Fonts now
+ * publishes), so each weight is one axis setting on one file rather than a
+ * separate TTF. That needs API 26, which is why minSdk is 26 - a nine-year-old
+ * floor in 2026, and the alternative was shipping eight static files.
  */
+private fun jakarta(weight: FontWeight) = Font(
+    R.font.plus_jakarta_sans,
+    weight = weight,
+    variationSettings = FontVariation.Settings(FontVariation.weight(weight.weight)),
+)
+
+private fun literata(weight: FontWeight) = Font(
+    R.font.literata,
+    weight = weight,
+    variationSettings = FontVariation.Settings(
+        FontVariation.weight(weight.weight),
+        // Optical size: Literata carries a real opsz axis, so body text gets
+        // the reading-optimised cut rather than a scaled display cut.
+        FontVariation.Setting("opsz", 16f),
+    ),
+)
+
 private val Jakarta = FontFamily(
-    Font(R.font.plus_jakarta_sans_regular, FontWeight.Normal),
-    Font(R.font.plus_jakarta_sans_medium, FontWeight.Medium),
-    Font(R.font.plus_jakarta_sans_semibold, FontWeight.SemiBold),
-    Font(R.font.plus_jakarta_sans_bold, FontWeight.Bold),
+    jakarta(FontWeight.Normal),
+    jakarta(FontWeight.Medium),
+    jakarta(FontWeight.SemiBold),
+    jakarta(FontWeight.Bold),
 )
 
 val Literata = FontFamily(
-    Font(R.font.literata_regular, FontWeight.Normal),
-    Font(R.font.literata_medium, FontWeight.Medium),
-    Font(R.font.literata_semibold, FontWeight.SemiBold),
+    literata(FontWeight.Normal),
+    literata(FontWeight.Medium),
+    literata(FontWeight.SemiBold),
 )
 
 private val BaseTypography = Typography()

@@ -7,7 +7,11 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 
 /**
- * The on-device content model. Mirrors content/schema/*.json.
+ * The on-device content model. Mirrors the JSON schemas in content/schema.
+ *
+ * (Written without a `/`+`*` glob in this comment on purpose: Kotlin block
+ * comments nest, so one inside a KDoc opens a comment that never closes and
+ * silently swallows the rest of the file.)
  *
  * Everything a learner meets is here: items, the misconception each distractor
  * encodes, and the authored ladder rungs. Nothing is generated at runtime
