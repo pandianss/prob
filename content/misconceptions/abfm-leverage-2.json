@@ -1,0 +1,138 @@
+[
+  {
+    "id": "ABFM.B.LEV.DOL-SALES-OVER-EBIT",
+    "statement": "Learner computes operating leverage as sales divided by EBIT, forgetting that variable cost comes off before the ratio is formed. The numerator of DOL is contribution, not revenue.",
+    "concept": "contribution-and-cost-behaviour",
+    "signature": ["selects an option equal to sales / EBIT"],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "contrast-cases",
+    "ladder": [
+      "Which part of revenue actually moves when sales volume moves by one unit?",
+      "Variable cost rises with every unit sold. Should it be inside the top of the ratio or taken out first?",
+      "Operating leverage compares contribution to EBIT - revenue after variable cost, not revenue.",
+      "Subtract variable cost from sales first. What you divided by EBIT was the gross figure."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT",
+    "statement": "Learner divides fixed cost by EBIT and reports that as operating leverage. Because contribution equals EBIT plus fixed cost, this yields DOL minus one.",
+    "concept": "contribution-and-cost-behaviour",
+    "signature": ["selects an option exactly 1.00 below the correct DOL"],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "contrast-cases",
+    "ladder": [
+      "Fixed cost creates operating leverage - but is fixed cost the thing being compared to EBIT?",
+      "Contribution is EBIT plus fixed cost. What happens if you leave the EBIT part out of the numerator?",
+      "DOL is contribution over EBIT, which equals 1 plus fixed cost over EBIT.",
+      "Your answer is exactly one below the correct figure. That gap is the EBIT you left out of the top."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.DTL-ADDED",
+    "statement": "Learner adds operating and financial leverage to get combined leverage. The effects compound - a change in sales is magnified once to EBIT and again to EBT - so the degrees multiply.",
+    "concept": "ratio-of-percentage-changes",
+    "signature": ["selects DOL + DFL"],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "quantity-intuition",
+    "ladder": [
+      "Sales move by 10%. What happens to EBIT, and then what happens to EBT from that?",
+      "The second magnification acts on a change that has already been magnified once. Is that adding or scaling?",
+      "Combined leverage is operating leverage times financial leverage - which also equals contribution over EBT.",
+      "Try DOL 3 and DFL 2: a 10% sales change becomes 30% at EBIT, then 60% at EBT. That is a degree of 6 - adding would have said 5."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.DTL-OMITS-FINANCIAL",
+    "statement": "Learner reports operating leverage alone when asked for combined leverage, ignoring the interest layer that sits between EBIT and EBT.",
+    "concept": "ratio-of-percentage-changes",
+    "signature": ["selects an option equal to DOL"],
+    "prerequisites": ["contribution-and-cost-behaviour"],
+    "remediation_strategy": "contrast-cases",
+    "ladder": [
+      "Combined leverage measures sales against which profit line - EBIT, or EBT?",
+      "Between EBIT and EBT sits a fixed charge. Did your answer account for it?",
+      "Combined leverage is contribution over EBT, so interest is inside it.",
+      "You stopped at EBIT, which gives operating leverage. Carry it one line further down, to EBT."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.BEP-TOTAL-CONTRIBUTION",
+    "statement": "Learner divides fixed cost by total contribution instead of contribution per unit when finding the break-even point, producing a fraction rather than a number of units.",
+    "concept": "contribution-and-cost-behaviour",
+    "signature": ["selects a value below 1 when the answer should be in units"],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "quantity-intuition",
+    "ladder": [
+      "The break-even point is a count of what?",
+      "Each unit sold recovers some fixed cost. How much does one unit recover?",
+      "Break-even units are fixed cost divided by contribution per unit.",
+      "An answer below 1 cannot be a number of units sold. Divide by what a single unit contributes, not by the total."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.BEP-USES-PRICE",
+    "statement": "Learner divides fixed cost by selling price per unit when finding break-even, as though every rupee of revenue went to cover fixed cost. Only the contribution per unit does.",
+    "concept": "contribution-and-cost-behaviour",
+    "signature": ["selects fixed cost / price per unit"],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "contrast-cases",
+    "ladder": [
+      "When one unit is sold, does all of its price go towards fixed cost?",
+      "Part of each unit's price is spent on that unit's own variable cost. What is left over?",
+      "Break-even units are fixed cost over contribution per unit - price minus variable cost.",
+      "Dividing by price assumes variable cost is zero. Take it off the price first; the break-even count rises."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.PCT-CHANGE-BASE",
+    "statement": "Learner computes percentage changes on the new value rather than the original, understating both changes and distorting their ratio.",
+    "concept": "ratio-arithmetic",
+    "signature": ["selects a value consistent with dividing each change by the later figure"],
+    "prerequisites": [],
+    "remediation_strategy": "quantity-intuition",
+    "ladder": [
+      "A percentage change is a change relative to what - where you started, or where you ended?",
+      "Check your EPS change: which of the two EPS figures did you divide by?",
+      "Percentage change is the change divided by the ORIGINAL value, for both EPS and EBIT.",
+      "Dividing by the new figure shrinks each percentage. Redo both with the starting values underneath."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  },
+  {
+    "id": "ABFM.B.LEV.RATIO-INVERTED",
+    "statement": "Learner forms a leverage ratio upside down - EBIT over contribution, EBT over EBIT, or the EBIT change over the EPS change - yielding a value below 1 where leverage should magnify.",
+    "concept": "ratio-of-percentage-changes",
+    "signature": ["selects the reciprocal of the correct answer"],
+    "prerequisites": ["ratio-arithmetic"],
+    "remediation_strategy": "quantity-intuition",
+    "ladder": [
+      "Leverage magnifies. Should a degree of leverage with a positive fixed cost be above 1 or below it?",
+      "Your answer is below 1. Which figure did you put on top?",
+      "Each degree puts the more-leveraged measure on top: contribution over EBIT, EBIT over EBT, contribution over EBT.",
+      "Your answer is the reciprocal of the right one. Turn the ratio over."
+    ],
+    "status": "proposed",
+    "prevalence": null,
+    "n_observations": 0
+  }
+]

@@ -59,6 +59,13 @@ def main():
             'lifecycle': {'state': it['lifecycle']['state']},
         })
 
+    # Ship only misconceptions a servable item actually cites. Drafts can
+    # propose new ones long before anything using them is verified, and their
+    # ladders are dead weight on a device until then.
+    cited = set(o.get('misconception') for it in items for o in it['options']
+                if o.get('misconception'))
+    misconceptions = [m for m in misconceptions if m['id'] in cited]
+
     packed_mis = []
     short = []
     for m in misconceptions:
