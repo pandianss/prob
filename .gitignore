@@ -28,3 +28,6 @@ android/.gradle/
 android/build/
 android/app/build/
 android/local.properties
+
+# Page images rendered from the licensed PDF
+content/_pages/

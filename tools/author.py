@@ -227,8 +227,42 @@ def catalogue():
     return out
 
 
+def page_images(unit):
+    """Page images for a unit, as API image blocks (tools/pdf_pages.py).
+
+    The last block carries cache_control so every draft and every verify call
+    after the first reads the pages from cache instead of paying for them again
+    - on a 14-page unit that is most of the input tokens.
+    """
+    import base64, glob
+    files = sorted(glob.glob(os.path.join('content', '_pages', 'u%02d' % unit, '*.jpg')))
+    if not files:
+        raise SystemExit('no page images for unit %d - run: python tools/pdf_pages.py --unit %d'
+                         % (unit, unit))
+    blocks = []
+    for f in files:
+        data = base64.standard_b64encode(io.open(f, 'rb').read()).decode('ascii')
+        blocks.append({"type": "image",
+                       "source": {"type": "base64", "media_type": "image/jpeg", "data": data}})
+    blocks[-1]["cache_control"] = {"type": "ephemeral"}
+    return blocks, len(files)
+
+
+def as_content(source, text):
+    """Text source -> one string. Image source -> the page blocks, then the ask."""
+    if isinstance(source, list):
+        return source + [{"type": "text", "text": text}]
+    return text
+
+
 def draft_prompt(unit, passage, cat, n):
     lines = [u'%s\n    %s' % (m['id'], m['statement']) for m in cat]
+    if passage is None:
+        return (u'SOURCE: the page images above are Unit %d - %s, in order. Read '
+                u'formulas and tables exactly as printed; a stacked fraction is a '
+                u'division.\n\nMISCONCEPTION CATALOGUE:\n%s\n\nAuthor %d items grounded '
+                u'in these pages. Fewer is correct if the pages do not support %d.'
+                % (unit['unit'], unit['title'], u'\n'.join(lines), n, n))
     return (u'SOURCE PASSAGE (Unit %d - %s):\n"""\n%s\n"""\n\n'
             u'MISCONCEPTION CATALOGUE:\n%s\n\n'
             u'Author %d items grounded in this passage. Fewer is correct if the '
@@ -240,8 +274,11 @@ def verify_prompt(item, passage):
     shown = dict(item)
     shown.pop('arithmetic_expression', None)   # never show the drafter's working
     shown.pop('expected_value', None)
-    return (u'SOURCE PASSAGE:\n"""\n%s\n"""\n\nITEM:\n%s'
-            % (passage, json.dumps(shown, indent=1, ensure_ascii=False)))
+    item_json = json.dumps(shown, indent=1, ensure_ascii=False)
+    if passage is None:
+        return (u'SOURCE: the page images above. Quote the entailing span as it '
+                u'appears on the page.\n\nITEM:\n%s' % item_json)
+    return (u'SOURCE PASSAGE:\n"""\n%s\n"""\n\nITEM:\n%s' % (passage, item_json))
 
 
 # --------------------------------------------------------------------------
@@ -280,9 +317,18 @@ def main():
     ap.add_argument('--src', default='caiib/abfm.txt')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--out', default='content/items/_authored.json')
+    ap.add_argument('--images', action='store_true',
+                    help='author from page images (tools/pdf_pages.py) instead of the '
+                         'text extraction - use for units whose formulas and tables '
+                         'the extraction flattened (BLUEPRINT 3.8)')
     args = ap.parse_args()
 
     unit, passage = passage_for(args.src, args.unit)
+    source = passage
+    if args.images:
+        source, n_pages = page_images(args.unit)
+        passage = None
+        print(u'source: %d page images for unit %d' % (n_pages, args.unit))
     cat = catalogue()
     if not cat:
         raise SystemExit('no misconception catalogue in content/misconceptions/')
@@ -294,8 +340,9 @@ def main():
         print(u'DRAFT PROMPT (%d chars, ~%d tokens)\n%s...\n'
               % (len(dp), approx, dp[:1200]))
         print(u'VERIFY SYSTEM\n%s\n' % VERIFY_SYSTEM)
-        print(u'passage %d chars | catalogue %d | requested %d items'
-              % (len(passage), len(cat), args.n))
+        print(u'source %s | catalogue %d | requested %d items'
+              % ('%d page images' % len(source) if isinstance(source, list)
+                 else '%d chars of text' % len(passage), len(cat), args.n))
         print(u'\nverifier sees: the item (minus the drafter working) + the passage. '
               u'Nothing else.')
         return 0
@@ -314,7 +361,7 @@ def main():
         model=DRAFT_MODEL, max_tokens=16000,
         system=[{"type": "text", "text": DRAFT_SYSTEM,
                  "cache_control": {"type": "ephemeral"}}],
-        messages=[{"role": "user", "content": dp}],
+        messages=[{"role": "user", "content": as_content(source, dp)}],
         output_config={"format": {"type": "json_schema", "schema": ITEM_SCHEMA},
                        "effort": "high"},
     )
@@ -332,7 +379,7 @@ def main():
                 model=VERIFY_MODEL, max_tokens=8000,
                 system=[{"type": "text", "text": VERIFY_SYSTEM,
                          "cache_control": {"type": "ephemeral"}}],
-                messages=[{"role": "user", "content": verify_prompt(item, passage)}],
+                messages=[{"role": "user", "content": as_content(source, verify_prompt(item, passage))}],
                 output_config={"format": {"type": "json_schema", "schema": VERDICT_SCHEMA},
                                "effort": "high"},
             )

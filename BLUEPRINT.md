@@ -513,6 +513,7 @@ This makes source repair the first place the refuse-rather-than-guess rule appli
 
 #### Consequences
 
+- **Page images beat any text extraction of them.** The supplied PDF has no text layer — each page is an image — and that turns out to be the useful property: stacked fractions, boxed definitions and table grids are all still visually intact. OCR would flatten them again, exactly as the original extraction did, so the quantitative units are authored from the page images directly (`tools/pdf_pages.py`, `tools/author.py --images`). Every numeric key is still recomputed by the arithmetic gate, so reading from an image changes the source, not the proof obligation.
 - **A better source raises recall, not correctness.** What survives repair is already proved; a PDF with structure intact would simply yield more of it. Worth getting, no longer a blocker.
 - **Coverage is now measurable per unit before authoring begins.** Units where repair yields little are the units to leave uncovered, and that is knowable in advance rather than discovered through collapsing verification yield.
 - **Report repair rate alongside verification yield** (&sect;3.3). They are different failure modes: repair rate measures how much of the source is usable, yield measures how much of the usable source becomes items.
