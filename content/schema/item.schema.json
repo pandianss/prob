@@ -219,6 +219,27 @@
               "default": 0.005
             }
           }
+        },
+        "verifier": {
+          "type": "object",
+          "description": "Who performed the independent check (tools/ingest_verdicts.py).",
+          "properties": {
+            "model": {
+              "type": "string"
+            },
+            "packet": {
+              "type": "string"
+            },
+            "span_page": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "verdict": {
+              "type": "string"
+            }
+          }
         }
       }
     },

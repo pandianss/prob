@@ -190,6 +190,22 @@ def main():
                                u'discrimination must auto-retire (3.7)'
                         % (ps['a'], ps['n_responses']))
 
+    # Key-position skew: if the key sits at one letter most of the time, a
+    # learner (or a verifier) reads the pattern instead of the question. The
+    # first drafts had it at A every time.
+    positions = []
+    for path, doc in load('content/items/*.json'):
+        for item in (doc if isinstance(doc, list) else [doc]):
+            k = [o.get('id') for o in item.get('options', []) if o.get('key')]
+            if k:
+                positions.append(k[0])
+    if len(positions) >= 6:
+        top = max(set(positions), key=positions.count)
+        share = positions.count(top) / float(len(positions))
+        if share > 0.5:
+            err('content/items', u'key is at %s in %d of %d items - shuffle option order'
+                % (top, positions.count(top), len(positions)))
+
     print(u'misconceptions %d | items %d (%d live/field) | concepts %d'
           % (len(miscon), items, live, len(concepts)))
     for w in warnings:

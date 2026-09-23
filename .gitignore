@@ -31,3 +31,6 @@ android/local.properties
 
 # Page images rendered from the licensed PDF
 content/_pages/
+
+# Verification packets carry licensed page images
+content/_verify/

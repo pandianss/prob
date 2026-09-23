@@ -3,209 +3,579 @@
     "item_id": "itm_abfm_u8_s01_dfl",
     "syllabus_node": "ABFM.B.8.3",
     "concept": "ratio-of-percentage-changes",
-    "prereqs": ["ratio-arithmetic"],
+    "prereqs": [
+      "ratio-arithmetic"
+    ],
     "bloom": "apply",
     "tier": "caiib",
     "stem": "A firm earns EBIT of Rs. 5,00,000, pays interest of Rs. 2,00,000 and is taxed at 30%. What is its degree of financial leverage?",
     "given": [
-      {"label": "EBIT", "value": 500000, "unit": "INR"},
-      {"label": "Interest", "value": 200000, "unit": "INR"},
-      {"label": "Tax rate", "value": 0.30, "unit": "fraction"}
+      {
+        "label": "EBIT",
+        "value": 500000,
+        "unit": "INR"
+      },
+      {
+        "label": "Interest",
+        "value": 200000,
+        "unit": "INR"
+      },
+      {
+        "label": "Tax rate",
+        "value": 0.3,
+        "unit": "fraction"
+      }
     ],
     "options": [
-      {"id": "A", "text": "1.67", "value": 1.67, "key": true},
-      {"id": "B", "text": "1.17", "value": 1.17, "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL"},
-      {"id": "C", "text": "0.60", "value": 0.60, "misconception": "ABFM.B.LEV.RATIO-INVERTED"},
-      {"id": "D", "text": "1.00", "value": 1.00, "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE"}
+      {
+        "id": "A",
+        "text": "0.60",
+        "value": 0.6,
+        "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+      },
+      {
+        "id": "B",
+        "text": "1.00",
+        "value": 1.0,
+        "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE"
+      },
+      {
+        "id": "C",
+        "text": "1.67",
+        "value": 1.67,
+        "key": true
+      },
+      {
+        "id": "D",
+        "text": "1.17",
+        "value": 1.17,
+        "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL"
+      }
     ],
     "resolution": "EBT is 5,00,000 less 2,00,000 = 3,00,000, and DFL is EBIT over EBT = 1.67. The 30% tax plays no part: it scales EPS and EBT alike, so it cancels.",
     "grounding_regime": "doctrinal",
-    "grounding": [{"source": "IIBF ABFM", "locator": "Unit 8.3 Degree of Financial Leverage", "version": "2023", "kind": "courseware"}],
-    "derived_from": [{"work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.3"}],
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.3 Degree of Financial Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 8,
+        "section": "8.3"
+      }
+    ],
     "verification": {
       "entailed_span": "Or, DFL = EBIT / EBT",
       "second_model_agrees": false,
-      "arithmetic": {"expression": "ebit / (ebit - interest)", "expected": 1.6666667, "tolerance": 0.005}
+      "arithmetic": {
+        "expression": "ebit / (ebit - interest)",
+        "expected": 1.6666667,
+        "tolerance": 0.005
+      }
     },
-    "lifecycle": {"state": "draft"}
+    "lifecycle": {
+      "state": "draft"
+    }
   },
   {
     "item_id": "itm_abfm_u8_s02_dol",
     "syllabus_node": "ABFM.B.8.5",
     "concept": "contribution-and-cost-behaviour",
-    "prereqs": ["ratio-arithmetic"],
+    "prereqs": [
+      "ratio-arithmetic"
+    ],
     "bloom": "apply",
     "tier": "caiib",
     "stem": "A unit sells 8,000 items at Rs. 60 each. Variable cost is Rs. 35 an item and fixed operating cost is Rs. 1,20,000. What is its degree of operating leverage?",
     "given": [
-      {"label": "Units", "value": 8000, "unit": "count"},
-      {"label": "Price", "value": 60, "unit": "INR"},
-      {"label": "Variable cost", "value": 35, "unit": "INR"},
-      {"label": "Fixed cost", "value": 120000, "unit": "INR"}
+      {
+        "label": "Units",
+        "value": 8000,
+        "unit": "count"
+      },
+      {
+        "label": "Price",
+        "value": 60,
+        "unit": "INR"
+      },
+      {
+        "label": "Variable cost",
+        "value": 35,
+        "unit": "INR"
+      },
+      {
+        "label": "Fixed cost",
+        "value": 120000,
+        "unit": "INR"
+      }
     ],
     "options": [
-      {"id": "A", "text": "2.50", "value": 2.50, "key": true},
-      {"id": "B", "text": "6.00", "value": 6.00, "misconception": "ABFM.B.LEV.DOL-SALES-OVER-EBIT"},
-      {"id": "C", "text": "0.40", "value": 0.40, "misconception": "ABFM.B.LEV.RATIO-INVERTED"},
-      {"id": "D", "text": "1.50", "value": 1.50, "misconception": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT"}
+      {
+        "id": "A",
+        "text": "0.40",
+        "value": 0.4,
+        "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+      },
+      {
+        "id": "B",
+        "text": "1.50",
+        "value": 1.5,
+        "misconception": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT"
+      },
+      {
+        "id": "C",
+        "text": "6.00",
+        "value": 6.0,
+        "misconception": "ABFM.B.LEV.DOL-SALES-OVER-EBIT"
+      },
+      {
+        "id": "D",
+        "text": "2.50",
+        "value": 2.5,
+        "key": true
+      }
     ],
     "resolution": "Contribution is 8,000 x (60 - 35) = 2,00,000. EBIT is that less 1,20,000 = 80,000. DOL is contribution over EBIT = 2.50.",
     "grounding_regime": "doctrinal",
-    "grounding": [{"source": "IIBF ABFM", "locator": "Unit 8.5 Degree of Operating Leverage", "version": "2023", "kind": "courseware"}],
-    "derived_from": [{"work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.5"}],
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.5 Degree of Operating Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 8,
+        "section": "8.5"
+      }
+    ],
     "verification": {
       "entailed_span": "DOL = Contribution / Earnings Before Interest and Taxes (EBIT)",
       "second_model_agrees": false,
-      "arithmetic": {"expression": "units * (price - variable_cost) / (units * (price - variable_cost) - fixed_cost)", "expected": 2.5, "tolerance": 0.005}
+      "arithmetic": {
+        "expression": "units * (price - variable_cost) / (units * (price - variable_cost) - fixed_cost)",
+        "expected": 2.5,
+        "tolerance": 0.005
+      }
     },
-    "lifecycle": {"state": "draft"}
+    "lifecycle": {
+      "state": "draft"
+    }
   },
   {
     "item_id": "itm_abfm_u8_s03_dtl",
     "syllabus_node": "ABFM.B.8.6",
     "concept": "ratio-of-percentage-changes",
-    "prereqs": ["contribution-and-cost-behaviour"],
+    "prereqs": [
+      "contribution-and-cost-behaviour"
+    ],
     "bloom": "apply",
     "tier": "caiib",
     "stem": "A company has contribution of Rs. 3,00,000, EBIT of Rs. 1,20,000 and interest of Rs. 40,000. What is its degree of combined leverage?",
     "given": [
-      {"label": "Contribution", "value": 300000, "unit": "INR"},
-      {"label": "EBIT", "value": 120000, "unit": "INR"},
-      {"label": "Interest", "value": 40000, "unit": "INR"}
+      {
+        "label": "Contribution",
+        "value": 300000,
+        "unit": "INR"
+      },
+      {
+        "label": "EBIT",
+        "value": 120000,
+        "unit": "INR"
+      },
+      {
+        "label": "Interest",
+        "value": 40000,
+        "unit": "INR"
+      }
     ],
     "options": [
-      {"id": "A", "text": "3.75", "value": 3.75, "key": true},
-      {"id": "B", "text": "4.00", "value": 4.00, "misconception": "ABFM.B.LEV.DTL-ADDED"},
-      {"id": "C", "text": "0.27", "value": 0.27, "misconception": "ABFM.B.LEV.RATIO-INVERTED"},
-      {"id": "D", "text": "2.50", "value": 2.50, "misconception": "ABFM.B.LEV.DTL-OMITS-FINANCIAL"}
+      {
+        "id": "A",
+        "text": "3.75",
+        "value": 3.75,
+        "key": true
+      },
+      {
+        "id": "B",
+        "text": "2.50",
+        "value": 2.5,
+        "misconception": "ABFM.B.LEV.DTL-OMITS-FINANCIAL"
+      },
+      {
+        "id": "C",
+        "text": "4.00",
+        "value": 4.0,
+        "misconception": "ABFM.B.LEV.DTL-ADDED"
+      },
+      {
+        "id": "D",
+        "text": "0.27",
+        "value": 0.27,
+        "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+      }
     ],
     "resolution": "EBT is 1,20,000 less 40,000 = 80,000. Combined leverage is contribution over EBT = 3,00,000 / 80,000 = 3.75 - the same as DOL of 2.5 times DFL of 1.5.",
     "grounding_regime": "doctrinal",
-    "grounding": [{"source": "IIBF ABFM", "locator": "Unit 8.6 Combined or Total Leverage", "version": "2023", "kind": "courseware"}],
-    "derived_from": [{"work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.6"}],
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.6 Combined or Total Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 8,
+        "section": "8.6"
+      }
+    ],
     "verification": {
       "entailed_span": "DTL = DFL x DOL = EBIT/EBT x Contribution/EBIT = Contribution/EBT",
       "second_model_agrees": false,
-      "arithmetic": {"expression": "contribution / (ebit - interest)", "expected": 3.75, "tolerance": 0.005}
+      "arithmetic": {
+        "expression": "contribution / (ebit - interest)",
+        "expected": 3.75,
+        "tolerance": 0.005
+      }
     },
-    "lifecycle": {"state": "draft"}
+    "lifecycle": {
+      "state": "draft"
+    }
   },
   {
     "item_id": "itm_abfm_u8_s04_bep",
     "syllabus_node": "ABFM.B.8.5",
     "concept": "contribution-and-cost-behaviour",
-    "prereqs": ["ratio-arithmetic"],
+    "prereqs": [
+      "ratio-arithmetic"
+    ],
     "bloom": "apply",
     "tier": "caiib",
     "stem": "A product sells at Rs. 50 with a variable cost of Rs. 32 a unit. Fixed cost is Rs. 90,000, and 8,000 units are currently sold. How many units must be sold to break even?",
     "given": [
-      {"label": "Price", "value": 50, "unit": "INR"},
-      {"label": "Variable cost", "value": 32, "unit": "INR"},
-      {"label": "Fixed cost", "value": 90000, "unit": "INR"},
-      {"label": "Units sold", "value": 8000, "unit": "count"}
+      {
+        "label": "Price",
+        "value": 50,
+        "unit": "INR"
+      },
+      {
+        "label": "Variable cost",
+        "value": 32,
+        "unit": "INR"
+      },
+      {
+        "label": "Fixed cost",
+        "value": 90000,
+        "unit": "INR"
+      },
+      {
+        "label": "Units sold",
+        "value": 8000,
+        "unit": "count"
+      }
     ],
     "options": [
-      {"id": "A", "text": "5,000 units", "value": 5000, "key": true},
-      {"id": "B", "text": "0.625", "value": 0.625, "misconception": "ABFM.B.LEV.BEP-TOTAL-CONTRIBUTION"},
-      {"id": "C", "text": "1,800 units", "value": 1800, "misconception": "ABFM.B.LEV.BEP-USES-PRICE"}
+      {
+        "id": "A",
+        "text": "0.625",
+        "value": 0.625,
+        "misconception": "ABFM.B.LEV.BEP-TOTAL-CONTRIBUTION"
+      },
+      {
+        "id": "B",
+        "text": "1,800 units",
+        "value": 1800,
+        "misconception": "ABFM.B.LEV.BEP-USES-PRICE"
+      },
+      {
+        "id": "C",
+        "text": "5,000 units",
+        "value": 5000,
+        "key": true
+      }
     ],
     "resolution": "Each unit contributes 50 - 32 = Rs. 18 towards fixed cost, so break-even is 90,000 / 18 = 5,000 units. Current sales are irrelevant to where break-even sits.",
     "grounding_regime": "doctrinal",
-    "grounding": [{"source": "IIBF ABFM", "locator": "Unit 8.5 Break-Even Analysis and Operating Leverage", "version": "2023", "kind": "courseware"}],
-    "derived_from": [{"work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.5"}],
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.5 Break-Even Analysis and Operating Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 8,
+        "section": "8.5"
+      }
+    ],
     "verification": {
       "entailed_span": "Break- even point (Fixed Cost / Contribution",
       "second_model_agrees": false,
-      "arithmetic": {"expression": "fixed_cost / (price - variable_cost)", "expected": 5000, "tolerance": 0.5}
+      "arithmetic": {
+        "expression": "fixed_cost / (price - variable_cost)",
+        "expected": 5000,
+        "tolerance": 0.5
+      }
     },
-    "lifecycle": {"state": "draft"}
+    "lifecycle": {
+      "state": "draft"
+    }
   },
   {
     "item_id": "itm_abfm_u8_s05_dflpct",
     "syllabus_node": "ABFM.B.8.3",
     "concept": "ratio-of-percentage-changes",
-    "prereqs": ["ratio-arithmetic"],
+    "prereqs": [
+      "ratio-arithmetic"
+    ],
     "bloom": "apply",
     "tier": "caiib",
     "stem": "When a firm's EBIT rises from Rs. 1,00,000 to Rs. 1,25,000, its EPS rises from Rs. 8 to Rs. 11. What degree of financial leverage does this imply?",
     "given": [
-      {"label": "EBIT old", "value": 100000, "unit": "INR"},
-      {"label": "EBIT new", "value": 125000, "unit": "INR"},
-      {"label": "EPS old", "value": 8, "unit": "INR"},
-      {"label": "EPS new", "value": 11, "unit": "INR"}
+      {
+        "label": "EBIT old",
+        "value": 100000,
+        "unit": "INR"
+      },
+      {
+        "label": "EBIT new",
+        "value": 125000,
+        "unit": "INR"
+      },
+      {
+        "label": "EPS old",
+        "value": 8,
+        "unit": "INR"
+      },
+      {
+        "label": "EPS new",
+        "value": 11,
+        "unit": "INR"
+      }
     ],
     "options": [
-      {"id": "A", "text": "1.50", "value": 1.50, "key": true},
-      {"id": "B", "text": "1.36", "value": 1.36, "misconception": "ABFM.B.LEV.PCT-CHANGE-BASE"},
-      {"id": "C", "text": "0.67", "value": 0.67, "misconception": "ABFM.B.LEV.RATIO-INVERTED"}
+      {
+        "id": "A",
+        "text": "1.50",
+        "value": 1.5,
+        "key": true
+      },
+      {
+        "id": "B",
+        "text": "0.67",
+        "value": 0.67,
+        "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+      },
+      {
+        "id": "C",
+        "text": "1.36",
+        "value": 1.36,
+        "misconception": "ABFM.B.LEV.PCT-CHANGE-BASE"
+      }
     ],
     "resolution": "EPS rises 3 on 8, or 37.5%. EBIT rises 25,000 on 1,00,000, or 25%. DFL is 37.5% over 25% = 1.50. Both changes are measured from the starting figures.",
     "grounding_regime": "doctrinal",
-    "grounding": [{"source": "IIBF ABFM", "locator": "Unit 8.3 Degree of Financial Leverage", "version": "2023", "kind": "courseware"}],
-    "derived_from": [{"work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.3"}],
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.3 Degree of Financial Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 8,
+        "section": "8.3"
+      }
+    ],
     "verification": {
       "entailed_span": "Degree of financial leverage is defined as ratio of percentage change in EPS and percentage change in EBIT",
       "second_model_agrees": false,
-      "arithmetic": {"expression": "((eps_new - eps_old) / eps_old) / ((ebit_new - ebit_old) / ebit_old)", "expected": 1.5, "tolerance": 0.005}
+      "arithmetic": {
+        "expression": "((eps_new - eps_old) / eps_old) / ((ebit_new - ebit_old) / ebit_old)",
+        "expected": 1.5,
+        "tolerance": 0.005
+      }
     },
-    "lifecycle": {"state": "draft"}
+    "lifecycle": {
+      "state": "draft"
+    }
   },
   {
     "item_id": "itm_abfm_u8_s06_dolnil",
     "syllabus_node": "ABFM.B.8.5",
     "concept": "contribution-and-cost-behaviour",
-    "prereqs": ["ratio-arithmetic"],
+    "prereqs": [
+      "ratio-arithmetic"
+    ],
     "bloom": "understand",
     "tier": "caiib",
     "stem": "A trader sells 10,000 units at Rs. 40 with a variable cost of Rs. 25 a unit and carries no fixed operating cost at all. What is the degree of operating leverage?",
     "given": [
-      {"label": "Units", "value": 10000, "unit": "count"},
-      {"label": "Price", "value": 40, "unit": "INR"},
-      {"label": "Variable cost", "value": 25, "unit": "INR"},
-      {"label": "Fixed cost", "value": 0, "unit": "INR"}
+      {
+        "label": "Units",
+        "value": 10000,
+        "unit": "count"
+      },
+      {
+        "label": "Price",
+        "value": 40,
+        "unit": "INR"
+      },
+      {
+        "label": "Variable cost",
+        "value": 25,
+        "unit": "INR"
+      },
+      {
+        "label": "Fixed cost",
+        "value": 0,
+        "unit": "INR"
+      }
     ],
     "options": [
-      {"id": "A", "text": "1.00", "value": 1.00, "key": true},
-      {"id": "B", "text": "2.67", "value": 2.67, "misconception": "ABFM.B.LEV.DOL-SALES-OVER-EBIT"},
-      {"id": "C", "text": "0.00", "value": 0.00, "misconception": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT"}
+      {
+        "id": "A",
+        "text": "0.00",
+        "value": 0.0,
+        "misconception": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT"
+      },
+      {
+        "id": "B",
+        "text": "1.00",
+        "value": 1.0,
+        "key": true
+      },
+      {
+        "id": "C",
+        "text": "2.67",
+        "value": 2.67,
+        "misconception": "ABFM.B.LEV.DOL-SALES-OVER-EBIT"
+      }
     ],
     "resolution": "With no fixed cost, contribution and EBIT are the same 1,50,000, so DOL is exactly 1: profit moves in step with sales and nothing is magnified. Operating leverage exists only because of fixed cost.",
     "grounding_regime": "doctrinal",
-    "grounding": [{"source": "IIBF ABFM", "locator": "Unit 8.5 Degree of Operating Leverage", "version": "2023", "kind": "courseware"}],
-    "derived_from": [{"work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.5"}],
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.5 Degree of Operating Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 8,
+        "section": "8.5"
+      }
+    ],
     "verification": {
       "entailed_span": "Situation 1: No Fixed Cost ... Degree of Operative leverage (DOL) = 50% / 50% = 1",
       "second_model_agrees": false,
-      "arithmetic": {"expression": "units * (price - variable_cost) / (units * (price - variable_cost) - fixed_cost)", "expected": 1.0, "tolerance": 0.005}
+      "arithmetic": {
+        "expression": "units * (price - variable_cost) / (units * (price - variable_cost) - fixed_cost)",
+        "expected": 1.0,
+        "tolerance": 0.005
+      }
     },
-    "lifecycle": {"state": "draft"}
+    "lifecycle": {
+      "state": "draft"
+    }
   },
   {
     "item_id": "itm_abfm_u8_s07_dtlprod",
     "syllabus_node": "ABFM.B.8.6",
     "concept": "ratio-of-percentage-changes",
-    "prereqs": ["contribution-and-cost-behaviour"],
+    "prereqs": [
+      "contribution-and-cost-behaviour"
+    ],
     "bloom": "apply",
     "tier": "caiib",
     "stem": "A firm's degree of operating leverage is 2.4 and its degree of financial leverage is 1.25. What is its degree of combined leverage?",
     "given": [
-      {"label": "DOL", "value": 2.4, "unit": "ratio"},
-      {"label": "DFL", "value": 1.25, "unit": "ratio"}
+      {
+        "label": "DOL",
+        "value": 2.4,
+        "unit": "ratio"
+      },
+      {
+        "label": "DFL",
+        "value": 1.25,
+        "unit": "ratio"
+      }
     ],
     "options": [
-      {"id": "A", "text": "3.00", "value": 3.00, "key": true},
-      {"id": "B", "text": "3.65", "value": 3.65, "misconception": "ABFM.B.LEV.DTL-ADDED"},
-      {"id": "C", "text": "2.40", "value": 2.40, "misconception": "ABFM.B.LEV.DTL-OMITS-FINANCIAL"}
+      {
+        "id": "A",
+        "text": "2.40",
+        "value": 2.4,
+        "misconception": "ABFM.B.LEV.DTL-OMITS-FINANCIAL"
+      },
+      {
+        "id": "B",
+        "text": "3.65",
+        "value": 3.65,
+        "misconception": "ABFM.B.LEV.DTL-ADDED"
+      },
+      {
+        "id": "C",
+        "text": "3.00",
+        "value": 3.0,
+        "key": true
+      }
     ],
     "resolution": "Combined leverage is operating leverage times financial leverage: 2.4 x 1.25 = 3.00. The magnifications compound, so they multiply rather than add.",
     "grounding_regime": "doctrinal",
-    "grounding": [{"source": "IIBF ABFM", "locator": "Unit 8.6 Combined or Total Leverage", "version": "2023", "kind": "courseware"}],
-    "derived_from": [{"work": "macmillan/CAIIB-ABFM", "edition": "2023", "unit": 8, "section": "8.6"}],
+    "grounding": [
+      {
+        "source": "IIBF ABFM",
+        "locator": "Unit 8.6 Combined or Total Leverage",
+        "version": "2023",
+        "kind": "courseware"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 8,
+        "section": "8.6"
+      }
+    ],
     "verification": {
       "entailed_span": "DTL = DFL x DOL",
       "second_model_agrees": false,
-      "arithmetic": {"expression": "dol * dfl", "expected": 3.0, "tolerance": 0.005}
+      "arithmetic": {
+        "expression": "dol * dfl",
+        "expected": 3.0,
+        "tolerance": 0.005
+      }
     },
-    "lifecycle": {"state": "draft"}
+    "lifecycle": {
+      "state": "draft"
+    }
   }
 ]

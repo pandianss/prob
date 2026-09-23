@@ -35,9 +35,9 @@
       },
       {
         "id": "B",
-        "text": "0.75",
-        "value": 0.75,
-        "misconception": "ABFM.B.LEV.DFL-DOL-SWAPPED"
+        "text": "1.00",
+        "value": 1.0,
+        "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE"
       },
       {
         "id": "C",
@@ -47,9 +47,9 @@
       },
       {
         "id": "D",
-        "text": "1.00",
-        "value": 1.0,
-        "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE"
+        "text": "0.75",
+        "value": 0.75,
+        "misconception": "ABFM.B.LEV.DFL-DOL-SWAPPED"
       }
     ],
     "grounding_regime": "doctrinal",
@@ -71,7 +71,7 @@
     ],
     "verification": {
       "entailed_span": "Degree of financial leverage is defined as ratio of percentage change in EPS and percentage change in EBIT",
-      "second_model_agrees": true,
+      "second_model_agrees": false,
       "derivation_overlap": 0.11,
       "arithmetic": {
         "expression": "ebit / (ebit - interest)",
@@ -86,7 +86,7 @@
       "distractor_pull": {}
     },
     "lifecycle": {
-      "state": "field",
+      "state": "draft",
       "last_verified": "2026-09-21"
     },
     "resolution": "DFL is EBIT divided by EBT, here 40,00,000 over 30,00,000. Tax never enters it: it scales EPS and EBT by the same factor, so it cancels out of a ratio of percentage changes."
@@ -121,27 +121,27 @@
     "options": [
       {
         "id": "A",
+        "text": "1.40",
+        "value": 1.4,
+        "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL"
+      },
+      {
+        "id": "B",
         "text": "2.00",
         "value": 2.0,
         "key": true
       },
       {
-        "id": "B",
+        "id": "C",
         "text": "2.50",
         "value": 2.5,
         "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE"
       },
       {
-        "id": "C",
+        "id": "D",
         "text": "0.50",
         "value": 0.5,
         "misconception": "ABFM.B.LEV.DFL-DOL-SWAPPED"
-      },
-      {
-        "id": "D",
-        "text": "1.40",
-        "value": 1.4,
-        "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL"
       }
     ],
     "grounding_regime": "doctrinal",
@@ -163,7 +163,7 @@
     ],
     "verification": {
       "entailed_span": "DOL = Contribution Earnings Before Interest and Taxes (EBIT)",
-      "second_model_agrees": true,
+      "second_model_agrees": false,
       "derivation_overlap": 0.14,
       "arithmetic": {
         "expression": "(sales * pv_ratio) / ((sales * pv_ratio) - fixed_costs)",
@@ -178,7 +178,7 @@
       "distractor_pull": {}
     },
     "lifecycle": {
-      "state": "field",
+      "state": "draft",
       "last_verified": "2026-09-21"
     },
     "resolution": "Contribution is 1,00,000 x 40% = 40,000. Subtract fixed costs of 20,000 for an EBIT of 20,000, and DOL is contribution over EBIT = 2.00. Interest plays no part above EBIT."

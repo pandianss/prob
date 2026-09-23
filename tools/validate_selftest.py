@@ -72,6 +72,12 @@ def main():
     try:
         for name, path, mutate in mutations():
             data = json.loads(originals[path])
+            if path == TARGET:
+                # Several checks only apply to servable items. Promote the test
+                # copy first, so those checks are exercised however the real
+                # content is currently staged.
+                data[0]['lifecycle']['state'] = 'field'
+                data[0]['verification']['second_model_agrees'] = True
             try:
                 mutate(data)
             except Exception as e:
