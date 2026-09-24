@@ -15,6 +15,14 @@ BANNED_OPTION = re.compile(u'none of the above|all of the above|both a and b',
 
 errors, warnings = [], []
 
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
+import statute_store  # noqa: E402
+
+
+def statute_meta(sid):
+    p = os.path.join(ROOT, 'content', 'statutes', sid, 'meta.json')
+    return json.load(io.open(p, encoding='utf8')) if os.path.exists(p) else None
+
 
 def err(where, msg):
     errors.append(u'%s: %s' % (where, msg))
@@ -159,6 +167,23 @@ def main():
                 if k in ('statute', 'standard') and not g.get('version'):
                     err(where, u'%s grounding with no version/date - a citation to a '
                                u'regulation must say which issue of it (13.4)' % k)
+                if k == 'statute':
+                    # A regulatory citation must QUOTE the regulation, and the quote
+                    # must appear verbatim in the text fetched from the issuer.
+                    sid, clause, quote = g.get('statute'), g.get('clause'), g.get('quote')
+                    if not (sid and clause and quote):
+                        err(where, u'statute grounding needs statute, clause and a verbatim '
+                                   u'quote - a citation that quotes nothing proves nothing (4.2)')
+                    else:
+                        ok = statute_store.quote_ok(sid, clause, quote)
+                        if ok is not True:
+                            err(where, u'%s (4.2)' % ok)
+                        else:
+                            meta = statute_meta(sid)
+                            if meta and g.get('version') != meta.get('version'):
+                                err(where, u'cites %s as "%s" but the store holds "%s" - '
+                                           u're-verify against the current issue (13.4)'
+                                    % (sid, g.get('version'), meta.get('version')))
             if regime == 'statutory' and not kinds & {'statute', 'standard'}:
                 err(where, u'statutory item with no statute or standard cited (3.6)')
             if 'definition' in kinds and kinds <= {'definition'}:

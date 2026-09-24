@@ -51,7 +51,8 @@
   "grounding": [
    {
     "source": "Degree of financial leverage",
-    "locator": "DFL = EBIT / EBT"
+    "locator": "DFL = EBIT / EBT",
+    "quote": ""
    }
   ],
   "psychometrics": {
@@ -114,7 +115,8 @@
   "grounding": [
    {
     "source": "Degree of financial leverage",
-    "locator": "DFL = EBIT / EBT"
+    "locator": "DFL = EBIT / EBT",
+    "quote": ""
    }
   ],
   "psychometrics": {
@@ -182,7 +184,8 @@
   "grounding": [
    {
     "source": "Degree of operating leverage",
-    "locator": "DOL = Contribution / EBIT"
+    "locator": "DOL = Contribution / EBIT",
+    "quote": ""
    }
   ],
   "psychometrics": {
@@ -245,7 +248,8 @@
   "grounding": [
    {
     "source": "Degree of combined leverage",
-    "locator": "DCL = DOL x DFL = Contribution / EBT"
+    "locator": "DCL = DOL x DFL = Contribution / EBT",
+    "quote": ""
    }
   ],
   "psychometrics": {
@@ -307,7 +311,8 @@
   "grounding": [
    {
     "source": "Break-even point",
-    "locator": "Break-even units = Fixed cost / Contribution per unit"
+    "locator": "Break-even units = Fixed cost / Contribution per unit",
+    "quote": ""
    }
   ],
   "psychometrics": {
@@ -369,7 +374,8 @@
   "grounding": [
    {
     "source": "Degree of financial leverage",
-    "locator": "DFL = % change in EPS / % change in EBIT"
+    "locator": "DFL = % change in EPS / % change in EBIT",
+    "quote": ""
    }
   ],
   "psychometrics": {
@@ -431,7 +437,8 @@
   "grounding": [
    {
     "source": "Degree of operating leverage",
-    "locator": "DOL = Contribution / EBIT"
+    "locator": "DOL = Contribution / EBIT",
+    "quote": ""
    }
   ],
   "psychometrics": {
@@ -483,7 +490,8 @@
   "grounding": [
    {
     "source": "Degree of combined leverage",
-    "locator": "DCL = DOL x DFL = Contribution / EBT"
+    "locator": "DCL = DOL x DFL = Contribution / EBT",
+    "quote": ""
    }
   ],
   "psychometrics": {

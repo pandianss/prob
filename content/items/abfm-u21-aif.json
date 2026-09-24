@@ -1,0 +1,57 @@
+[
+  {
+    "item_id": "itm_abfm_u21_s01_aifcat",
+    "syllabus_node": "ABFM.D.21",
+    "concept": "aif-categories",
+    "prereqs": [],
+    "bloom": "understand",
+    "tier": "caiib",
+    "stem": "A fund makes private equity investments in unlisted companies. It receives no specific incentive or concession from the government or any regulator, and borrows only as the regulations permit. Under SEBI's rules for alternative investment funds, in which category must it register?",
+    "given": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Category III",
+        "misconception": "ABFM.D.AIF.NO-INCENTIVE-IS-CAT-III"
+      },
+      {
+        "id": "B",
+        "text": "Category I",
+        "misconception": "ABFM.D.AIF.PE-IS-CAT-I"
+      },
+      {
+        "id": "C",
+        "text": "Category II",
+        "key": true
+      }
+    ],
+    "resolution": "Category II. The fund is not in an incentivised sector (Category I) and uses no complex strategy or leverage (Category III), and the regulation's own explanation names private equity funds without specific incentives as Category II. 'No specific incentives' also appears for Category III - leverage is what separates the two.",
+    "grounding_regime": "statutory",
+    "grounding": [
+      {
+        "kind": "statute",
+        "issuer": "SEBI",
+        "statute": "sebi-aif-2012",
+        "clause": "reg-3",
+        "source": "SEBI (Alternative Investment Funds) Regulations, 2012",
+        "locator": "Regulation 3(4)(b), Explanation",
+        "version": "April 18, 2026",
+        "quote": "Alternative Investment Funds such as private equity funds or debt funds for which no specific incentives or concessions are given by the government or any other Regulator shall be included"
+      }
+    ],
+    "derived_from": [
+      {
+        "work": "macmillan/CAIIB-ABFM",
+        "edition": "2023",
+        "unit": 21
+      }
+    ],
+    "verification": {
+      "entailed_span": "Alternative Investment Funds such as private equity funds or debt funds for which no specific incentives or concessions are given by the government or any other Regulator shall be included",
+      "second_model_agrees": false
+    },
+    "lifecycle": {
+      "state": "draft"
+    }
+  }
+]

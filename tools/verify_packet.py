@@ -22,6 +22,9 @@ verdicts.json, and run tools/ingest_verdicts.py on it.
 """
 import argparse, datetime, glob, io, json, os, random, re, shutil, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import statute_store  # noqa: E402
+
 VERIFY_ROOT = os.path.join('content', '_verify')      # gitignored
 PAGES_ROOT = os.path.join('content', '_pages')
 LETTERS = 'ABCDE'
@@ -65,8 +68,15 @@ is the intended outcome, not a failure.
 ## Material
 
 - `items.json` - the items. Options are in random order.
-- `pages/` - the source pages, named by book page number (p177.jpg is page 177).
+- `pages/` - textbook pages, named by book page number (p177.jpg is page 177).
+- `regulations/` - regulation text as published by the regulator, where present.
 - `verdict.schema.json` - the exact shape your answer must take.
+
+Each item's `check_against` says which source governs it. **An item pointing to
+`regulations/` must be confirmed from that regulation text alone** - the
+regulation is the authority; quote it exactly, and leave span_page null. Items
+pointing to `pages/` are finance mathematics: confirm them from the definitions
+on those pages.
 
 Use nothing else. Do not search the web or rely on outside knowledge of the
 subject: the question is whether THESE pages support each item.
@@ -124,6 +134,7 @@ def main():
     rng = random.Random(a.seed)
 
     blind, mapping, units = [], {}, set()
+    statute_texts = {}
     for n, (f, it) in enumerate(chosen, 1):
         pid = '%s-%02d' % (packet, n)
         opts = list(it['options'])
@@ -134,9 +145,25 @@ def main():
             relabel[LETTERS[i]] = o['id']
             shown.append({"id": LETTERS[i], "text": o['text']})
         g = (it.get('grounding') or [{}])[0]
+        reg_file = None
+        if g.get('kind') == 'statute' and g.get('statute') and g.get('clause'):
+            # A statutory item is checked against the REGULATION, never the
+            # textbook - so the packet carries the clause as fetched from the
+            # issuer, and the verifier is told to use it.
+            clauses = statute_store.load_clauses(g['statute']) or {}
+            c = clauses.get(g['clause'])
+            if c:
+                reg_file = '%s_%s.txt' % (g['statute'], g['clause'])
+                statute_texts[reg_file] = u'%s\n%s - %s\n\n%s\n' % (
+                    g.get('source', ''), g['clause'], c.get('heading', ''), c['text'])
         blind.append({
             "packet_id": pid,
-            "section": g.get('locator', ''),
+            # Only WHERE to look, never the locator itself: "Regulation 3(4)(b)"
+            # names the answer (clause (b) is Category II), and a definition's
+            # locator is its formula, which hands over the method.
+            "section": (('%s, %s' % (g.get('source', ''), g['clause'])) if reg_file
+                        else 'Unit %s' % item_unit(it)),
+            "check_against": ("regulations/" + reg_file) if reg_file else "pages/",
             "stem": it['stem'],
             "given": [{"label": x['label'], "value": x['value'], "unit": x.get('unit', '')}
                       for x in it.get('given', [])],
@@ -146,7 +173,7 @@ def main():
         mapping[pid] = {"file": f.replace('\\', '/'), "item_id": it['item_id'],
                         "relabel": relabel, "key": key}
         u = item_unit(it)
-        if u:
+        if u and not reg_file:
             units.add(u)
 
     copied = 0
@@ -162,6 +189,11 @@ def main():
     def dump(path, obj):
         io.open(path, 'w', encoding='utf8').write(json.dumps(obj, indent=1, ensure_ascii=False))
 
+    if statute_texts:
+        os.makedirs(os.path.join(folder, 'regulations'))
+        for name, text in statute_texts.items():
+            io.open(os.path.join(folder, 'regulations', name), 'w', encoding='utf8').write(text)
+
     dump(os.path.join(folder, 'items.json'), blind)
     dump(os.path.join(folder, 'verdict.schema.json'), VERDICT_SCHEMA)
     io.open(os.path.join(folder, 'INSTRUCTIONS.md'), 'w', encoding='utf8').write(
@@ -171,7 +203,8 @@ def main():
 
     print('packet %s' % packet)
     print('  items  %d' % len(blind))
-    print('  pages  %d (units %s)' % (copied, ', '.join(str(u) for u in sorted(units))))
+    print('  pages  %d (units %s)' % (copied, ', '.join(str(u) for u in sorted(units)) or '-'))
+    print('  regulation texts  %d' % len(statute_texts))
     print('\nOpen ONLY this folder in the verifier:')
     print('  %s' % os.path.abspath(folder))
     print('\nAsk it to follow INSTRUCTIONS.md and write verdicts.json there. Then:')

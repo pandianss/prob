@@ -53,7 +53,13 @@ def main():
                          'misconception': o.get('misconception')}
                         for o in it['options']],
             'resolution': it.get('resolution', ''),
-            'grounding': [{'source': g.get('source', ''), 'locator': g.get('locator', '')}],
+            # A regulation is shown with the issue it quotes, because regulations
+            # are superseded and "as amended to" is part of the citation.
+            'grounding': [{'source': g.get('source', ''),
+                           'locator': (u'%s (as amended to %s)' % (g.get('locator', ''), g['version'])
+                                       if g.get('kind') == 'statute' and g.get('version')
+                                       else g.get('locator', '')),
+                           'quote': g.get('quote', '')}],
             'psychometrics': {'a': (it.get('psychometrics') or {}).get('a'),
                               'b': (it.get('psychometrics') or {}).get('b')},
             'lifecycle': {'state': it['lifecycle']['state']},

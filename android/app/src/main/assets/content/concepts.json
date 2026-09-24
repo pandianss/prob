@@ -100,5 +100,15 @@
    "ABFM.C.18"
   ],
   "status": "proposed"
+ },
+ {
+  "id": "aif-categories",
+  "title": "Categories of Alternative Investment Fund",
+  "prereqs": [],
+  "serves_nodes": [
+   "ABFM.D.21"
+  ],
+  "status": "proposed",
+  "note": "Statutory: SEBI (AIF) Regulations, 2012, reg. 3(4)."
  }
 ]
