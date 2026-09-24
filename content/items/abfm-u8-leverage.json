@@ -70,13 +70,17 @@
       }
     ],
     "verification": {
-      "entailed_span": "Degree of financial leverage is defined as ratio of percentage change in EPS and percentage change in EBIT",
-      "second_model_agrees": false,
-      "derivation_overlap": 0.11,
+      "entailed_span": "Or, DFL = EBIT / EBT",
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "ebit / (ebit - interest)",
         "expected": 1.3333333,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 178
       }
     },
     "psychometrics": {
@@ -86,7 +90,7 @@
       "distractor_pull": {}
     },
     "lifecycle": {
-      "state": "draft",
+      "state": "field",
       "last_verified": "2026-09-21"
     },
     "resolution": "DFL is EBIT divided by EBT, here 40,00,000 over 30,00,000. Tax never enters it: it scales EPS and EBT by the same factor, so it cancels out of a ratio of percentage changes."
@@ -164,11 +168,15 @@
     "verification": {
       "entailed_span": "DOL = Contribution Earnings Before Interest and Taxes (EBIT)",
       "second_model_agrees": false,
-      "derivation_overlap": 0.14,
       "arithmetic": {
         "expression": "(sales * pv_ratio) / ((sales * pv_ratio) - fixed_costs)",
         "expected": 2.0,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "verdict": "REJECT"
       }
     },
     "psychometrics": {
@@ -178,8 +186,8 @@
       "distractor_pull": {}
     },
     "lifecycle": {
-      "state": "draft",
-      "last_verified": "2026-09-21"
+      "state": "retired",
+      "retired_reason": "Reproduces the book's own Check Your Progress Q1 (figures and answer). Caught by the independent verifier; the recorded derivation_overlap of 0.14 was never measured."
     },
     "resolution": "Contribution is 1,00,000 x 40% = 40,000. Subtract fixed costs of 20,000 for an EBIT of 20,000, and DOL is contribution over EBIT = 2.00. Interest plays no part above EBIT."
   }

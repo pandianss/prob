@@ -1,1 +1,497 @@
-[]
+[
+ {
+  "item_id": "itm_abfm_u8_dfl_001",
+  "syllabus_node": "ABFM.B.8.3",
+  "concept": "ratio-of-percentage-changes",
+  "stem": "A company reports EBIT of Rs. 40,00,000 against interest of Rs. 10,00,000, and is taxed at 30%. What is its degree of financial leverage?",
+  "given": [
+   {
+    "label": "EBIT",
+    "value": 4000000,
+    "unit": "INR"
+   },
+   {
+    "label": "Interest",
+    "value": 1000000,
+    "unit": "INR"
+   },
+   {
+    "label": "Tax rate",
+    "value": 0.3,
+    "unit": "fraction"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "1.33",
+    "key": true,
+    "misconception": null
+   },
+   {
+    "id": "B",
+    "text": "1.00",
+    "key": false,
+    "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE"
+   },
+   {
+    "id": "C",
+    "text": "0.93",
+    "key": false,
+    "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL"
+   },
+   {
+    "id": "D",
+    "text": "0.75",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DFL-DOL-SWAPPED"
+   }
+  ],
+  "resolution": "DFL is EBIT divided by EBT, here 40,00,000 over 30,00,000. Tax never enters it: it scales EPS and EBT by the same factor, so it cancels out of a ratio of percentage changes.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.3 Degree of Financial Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ },
+ {
+  "item_id": "itm_abfm_u8_s01_dfl",
+  "syllabus_node": "ABFM.B.8.3",
+  "concept": "ratio-of-percentage-changes",
+  "stem": "A firm earns EBIT of Rs. 5,00,000, pays interest of Rs. 2,00,000 and is taxed at 30%. What is its degree of financial leverage?",
+  "given": [
+   {
+    "label": "EBIT",
+    "value": 500000,
+    "unit": "INR"
+   },
+   {
+    "label": "Interest",
+    "value": 200000,
+    "unit": "INR"
+   },
+   {
+    "label": "Tax rate",
+    "value": 0.3,
+    "unit": "fraction"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "0.60",
+    "key": false,
+    "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+   },
+   {
+    "id": "B",
+    "text": "1.00",
+    "key": false,
+    "misconception": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE"
+   },
+   {
+    "id": "C",
+    "text": "1.67",
+    "key": true,
+    "misconception": null
+   },
+   {
+    "id": "D",
+    "text": "1.17",
+    "key": false,
+    "misconception": "ABFM.B.LEV.TAX-APPLIED-TO-DFL"
+   }
+  ],
+  "resolution": "EBT is 5,00,000 less 2,00,000 = 3,00,000, and DFL is EBIT over EBT = 1.67. The 30% tax plays no part: it scales EPS and EBT alike, so it cancels.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.3 Degree of Financial Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ },
+ {
+  "item_id": "itm_abfm_u8_s02_dol",
+  "syllabus_node": "ABFM.B.8.5",
+  "concept": "contribution-and-cost-behaviour",
+  "stem": "A unit sells 8,000 items at Rs. 60 each. Variable cost is Rs. 35 an item and fixed operating cost is Rs. 1,20,000. What is its degree of operating leverage?",
+  "given": [
+   {
+    "label": "Units",
+    "value": 8000,
+    "unit": "count"
+   },
+   {
+    "label": "Price",
+    "value": 60,
+    "unit": "INR"
+   },
+   {
+    "label": "Variable cost",
+    "value": 35,
+    "unit": "INR"
+   },
+   {
+    "label": "Fixed cost",
+    "value": 120000,
+    "unit": "INR"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "0.40",
+    "key": false,
+    "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+   },
+   {
+    "id": "B",
+    "text": "1.50",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT"
+   },
+   {
+    "id": "C",
+    "text": "6.00",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DOL-SALES-OVER-EBIT"
+   },
+   {
+    "id": "D",
+    "text": "2.50",
+    "key": true,
+    "misconception": null
+   }
+  ],
+  "resolution": "Contribution is 8,000 x (60 - 35) = 2,00,000. EBIT is that less 1,20,000 = 80,000. DOL is contribution over EBIT = 2.50.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.5 Degree of Operating Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ },
+ {
+  "item_id": "itm_abfm_u8_s03_dtl",
+  "syllabus_node": "ABFM.B.8.6",
+  "concept": "ratio-of-percentage-changes",
+  "stem": "A company has contribution of Rs. 3,00,000, EBIT of Rs. 1,20,000 and interest of Rs. 40,000. What is its degree of combined leverage?",
+  "given": [
+   {
+    "label": "Contribution",
+    "value": 300000,
+    "unit": "INR"
+   },
+   {
+    "label": "EBIT",
+    "value": 120000,
+    "unit": "INR"
+   },
+   {
+    "label": "Interest",
+    "value": 40000,
+    "unit": "INR"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "3.75",
+    "key": true,
+    "misconception": null
+   },
+   {
+    "id": "B",
+    "text": "2.50",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DTL-OMITS-FINANCIAL"
+   },
+   {
+    "id": "C",
+    "text": "4.00",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DTL-ADDED"
+   },
+   {
+    "id": "D",
+    "text": "0.27",
+    "key": false,
+    "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+   }
+  ],
+  "resolution": "EBT is 1,20,000 less 40,000 = 80,000. Combined leverage is contribution over EBT = 3,00,000 / 80,000 = 3.75 - the same as DOL of 2.5 times DFL of 1.5.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.6 Combined or Total Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ },
+ {
+  "item_id": "itm_abfm_u8_s04_bep",
+  "syllabus_node": "ABFM.B.8.5",
+  "concept": "contribution-and-cost-behaviour",
+  "stem": "A product sells at Rs. 50 with a variable cost of Rs. 32 a unit. Fixed cost is Rs. 90,000, and 8,000 units are currently sold. How many units must be sold to break even?",
+  "given": [
+   {
+    "label": "Price",
+    "value": 50,
+    "unit": "INR"
+   },
+   {
+    "label": "Variable cost",
+    "value": 32,
+    "unit": "INR"
+   },
+   {
+    "label": "Fixed cost",
+    "value": 90000,
+    "unit": "INR"
+   },
+   {
+    "label": "Units sold",
+    "value": 8000,
+    "unit": "count"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "0.625",
+    "key": false,
+    "misconception": "ABFM.B.LEV.BEP-TOTAL-CONTRIBUTION"
+   },
+   {
+    "id": "B",
+    "text": "1,800 units",
+    "key": false,
+    "misconception": "ABFM.B.LEV.BEP-USES-PRICE"
+   },
+   {
+    "id": "C",
+    "text": "5,000 units",
+    "key": true,
+    "misconception": null
+   }
+  ],
+  "resolution": "Each unit contributes 50 - 32 = Rs. 18 towards fixed cost, so break-even is 90,000 / 18 = 5,000 units. Current sales are irrelevant to where break-even sits.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.5 Break-Even Analysis and Operating Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ },
+ {
+  "item_id": "itm_abfm_u8_s05_dflpct",
+  "syllabus_node": "ABFM.B.8.3",
+  "concept": "ratio-of-percentage-changes",
+  "stem": "When a firm's EBIT rises from Rs. 1,00,000 to Rs. 1,25,000, its EPS rises from Rs. 8 to Rs. 11. What degree of financial leverage does this imply?",
+  "given": [
+   {
+    "label": "EBIT old",
+    "value": 100000,
+    "unit": "INR"
+   },
+   {
+    "label": "EBIT new",
+    "value": 125000,
+    "unit": "INR"
+   },
+   {
+    "label": "EPS old",
+    "value": 8,
+    "unit": "INR"
+   },
+   {
+    "label": "EPS new",
+    "value": 11,
+    "unit": "INR"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "1.50",
+    "key": true,
+    "misconception": null
+   },
+   {
+    "id": "B",
+    "text": "0.67",
+    "key": false,
+    "misconception": "ABFM.B.LEV.RATIO-INVERTED"
+   },
+   {
+    "id": "C",
+    "text": "1.36",
+    "key": false,
+    "misconception": "ABFM.B.LEV.PCT-CHANGE-BASE"
+   }
+  ],
+  "resolution": "EPS rises 3 on 8, or 37.5%. EBIT rises 25,000 on 1,00,000, or 25%. DFL is 37.5% over 25% = 1.50. Both changes are measured from the starting figures.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.3 Degree of Financial Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ },
+ {
+  "item_id": "itm_abfm_u8_s06_dolnil",
+  "syllabus_node": "ABFM.B.8.5",
+  "concept": "contribution-and-cost-behaviour",
+  "stem": "A trader sells 10,000 units at Rs. 40 with a variable cost of Rs. 25 a unit and carries no fixed operating cost at all. What is the degree of operating leverage?",
+  "given": [
+   {
+    "label": "Units",
+    "value": 10000,
+    "unit": "count"
+   },
+   {
+    "label": "Price",
+    "value": 40,
+    "unit": "INR"
+   },
+   {
+    "label": "Variable cost",
+    "value": 25,
+    "unit": "INR"
+   },
+   {
+    "label": "Fixed cost",
+    "value": 0,
+    "unit": "INR"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "0.00",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT"
+   },
+   {
+    "id": "B",
+    "text": "1.00",
+    "key": true,
+    "misconception": null
+   },
+   {
+    "id": "C",
+    "text": "2.67",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DOL-SALES-OVER-EBIT"
+   }
+  ],
+  "resolution": "With no fixed cost, contribution and EBIT are the same 1,50,000, so DOL is exactly 1: profit moves in step with sales and nothing is magnified. Operating leverage exists only because of fixed cost.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.5 Degree of Operating Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ },
+ {
+  "item_id": "itm_abfm_u8_s07_dtlprod",
+  "syllabus_node": "ABFM.B.8.6",
+  "concept": "ratio-of-percentage-changes",
+  "stem": "A firm's degree of operating leverage is 2.4 and its degree of financial leverage is 1.25. What is its degree of combined leverage?",
+  "given": [
+   {
+    "label": "DOL",
+    "value": 2.4,
+    "unit": "ratio"
+   },
+   {
+    "label": "DFL",
+    "value": 1.25,
+    "unit": "ratio"
+   }
+  ],
+  "options": [
+   {
+    "id": "A",
+    "text": "2.40",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DTL-OMITS-FINANCIAL"
+   },
+   {
+    "id": "B",
+    "text": "3.65",
+    "key": false,
+    "misconception": "ABFM.B.LEV.DTL-ADDED"
+   },
+   {
+    "id": "C",
+    "text": "3.00",
+    "key": true,
+    "misconception": null
+   }
+  ],
+  "resolution": "Combined leverage is operating leverage times financial leverage: 2.4 x 1.25 = 3.00. The magnifications compound, so they multiply rather than add.",
+  "grounding": [
+   {
+    "source": "IIBF ABFM",
+    "locator": "Unit 8.6 Combined or Total Leverage"
+   }
+  ],
+  "psychometrics": {
+   "a": null,
+   "b": null
+  },
+  "lifecycle": {
+   "state": "field"
+  }
+ }
+]

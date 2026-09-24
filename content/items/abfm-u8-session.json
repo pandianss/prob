@@ -72,15 +72,20 @@
     ],
     "verification": {
       "entailed_span": "Or, DFL = EBIT / EBT",
-      "second_model_agrees": false,
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "ebit / (ebit - interest)",
         "expected": 1.6666667,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 178
       }
     },
     "lifecycle": {
-      "state": "draft"
+      "state": "field"
     }
   },
   {
@@ -161,15 +166,20 @@
     ],
     "verification": {
       "entailed_span": "DOL = Contribution / Earnings Before Interest and Taxes (EBIT)",
-      "second_model_agrees": false,
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "units * (price - variable_cost) / (units * (price - variable_cost) - fixed_cost)",
         "expected": 2.5,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 181
       }
     },
     "lifecycle": {
-      "state": "draft"
+      "state": "field"
     }
   },
   {
@@ -244,16 +254,21 @@
       }
     ],
     "verification": {
-      "entailed_span": "DTL = DFL x DOL = EBIT/EBT x Contribution/EBIT = Contribution/EBT",
-      "second_model_agrees": false,
+      "entailed_span": "DTL = DFL × DOL",
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "contribution / (ebit - interest)",
         "expected": 3.75,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 184
       }
     },
     "lifecycle": {
-      "state": "draft"
+      "state": "field"
     }
   },
   {
@@ -328,15 +343,20 @@
     ],
     "verification": {
       "entailed_span": "Break- even point (Fixed Cost / Contribution",
-      "second_model_agrees": false,
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "fixed_cost / (price - variable_cost)",
         "expected": 5000,
         "tolerance": 0.5
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 184
       }
     },
     "lifecycle": {
-      "state": "draft"
+      "state": "field"
     }
   },
   {
@@ -410,16 +430,21 @@
       }
     ],
     "verification": {
-      "entailed_span": "Degree of financial leverage is defined as ratio of percentage change in EPS and percentage change in EBIT",
-      "second_model_agrees": false,
+      "entailed_span": "Degree of Financial Leverage (DFL) = Percentage change in earnings per share (EPS) / Percentage change in earnings before interest and tax (EBIT)",
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "((eps_new - eps_old) / eps_old) / ((ebit_new - ebit_old) / ebit_old)",
         "expected": 1.5,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 177
       }
     },
     "lifecycle": {
-      "state": "draft"
+      "state": "field"
     }
   },
   {
@@ -493,16 +518,21 @@
       }
     ],
     "verification": {
-      "entailed_span": "Situation 1: No Fixed Cost ... Degree of Operative leverage (DOL) = 50% / 50% = 1",
-      "second_model_agrees": false,
+      "entailed_span": "Situation 1: No Fixed Cost",
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "units * (price - variable_cost) / (units * (price - variable_cost) - fixed_cost)",
         "expected": 1.0,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 183
       }
     },
     "lifecycle": {
-      "state": "draft"
+      "state": "field"
     }
   },
   {
@@ -566,16 +596,21 @@
       }
     ],
     "verification": {
-      "entailed_span": "DTL = DFL x DOL",
-      "second_model_agrees": false,
+      "entailed_span": "DTL = DFL × DOL",
+      "second_model_agrees": true,
       "arithmetic": {
         "expression": "dol * dfl",
         "expected": 3.0,
         "tolerance": 0.005
+      },
+      "verifier": {
+        "model": "gemini/antigravity",
+        "packet": "v20260923-092220",
+        "span_page": 184
       }
     },
     "lifecycle": {
-      "state": "draft"
+      "state": "field"
     }
   }
 ]

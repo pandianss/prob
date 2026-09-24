@@ -1,1 +1,156 @@
-[]
+[
+ {
+  "id": "ABFM.B.LEV.DOL-SALES-OVER-EBIT",
+  "statement": "Learner computes operating leverage as sales divided by EBIT, forgetting that variable cost comes off before the ratio is formed. The numerator of DOL is contribution, not revenue.",
+  "concept": "contribution-and-cost-behaviour",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Which part of revenue actually moves when sales volume moves by one unit?",
+   "Variable cost rises with every unit sold. Should it be inside the top of the ratio or taken out first?",
+   "Operating leverage compares contribution to EBIT - revenue after variable cost, not revenue.",
+   "Subtract variable cost from sales first. What you divided by EBIT was the gross figure."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.DOL-FIXED-OVER-EBIT",
+  "statement": "Learner divides fixed cost by EBIT and reports that as operating leverage. Because contribution equals EBIT plus fixed cost, this yields DOL minus one.",
+  "concept": "contribution-and-cost-behaviour",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Fixed cost creates operating leverage - but is fixed cost the thing being compared to EBIT?",
+   "Contribution is EBIT plus fixed cost. What happens if you leave the EBIT part out of the numerator?",
+   "DOL is contribution over EBIT, which equals 1 plus fixed cost over EBIT.",
+   "Your answer is exactly one below the correct figure. That gap is the EBIT you left out of the top."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.DTL-ADDED",
+  "statement": "Learner adds operating and financial leverage to get combined leverage. The effects compound - a change in sales is magnified once to EBIT and again to EBT - so the degrees multiply.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "quantity-intuition",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Sales move by 10%. What happens to EBIT, and then what happens to EBT from that?",
+   "The second magnification acts on a change that has already been magnified once. Is that adding or scaling?",
+   "Combined leverage is operating leverage times financial leverage - which also equals contribution over EBT.",
+   "Try DOL 3 and DFL 2: a 10% sales change becomes 30% at EBIT, then 60% at EBT. That is a degree of 6 - adding would have said 5."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.DTL-OMITS-FINANCIAL",
+  "statement": "Learner reports operating leverage alone when asked for combined leverage, ignoring the interest layer that sits between EBIT and EBT.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Combined leverage measures sales against which profit line - EBIT, or EBT?",
+   "Between EBIT and EBT sits a fixed charge. Did your answer account for it?",
+   "Combined leverage is contribution over EBT, so interest is inside it.",
+   "You stopped at EBIT, which gives operating leverage. Carry it one line further down, to EBT."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.BEP-TOTAL-CONTRIBUTION",
+  "statement": "Learner divides fixed cost by total contribution instead of contribution per unit when finding the break-even point, producing a fraction rather than a number of units.",
+  "concept": "contribution-and-cost-behaviour",
+  "remediation_strategy": "quantity-intuition",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "The break-even point is a count of what?",
+   "Each unit sold recovers some fixed cost. How much does one unit recover?",
+   "Break-even units are fixed cost divided by contribution per unit.",
+   "An answer below 1 cannot be a number of units sold. Divide by what a single unit contributes, not by the total."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.BEP-USES-PRICE",
+  "statement": "Learner divides fixed cost by selling price per unit when finding break-even, as though every rupee of revenue went to cover fixed cost. Only the contribution per unit does.",
+  "concept": "contribution-and-cost-behaviour",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "When one unit is sold, does all of its price go towards fixed cost?",
+   "Part of each unit's price is spent on that unit's own variable cost. What is left over?",
+   "Break-even units are fixed cost over contribution per unit - price minus variable cost.",
+   "Dividing by price assumes variable cost is zero. Take it off the price first; the break-even count rises."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.PCT-CHANGE-BASE",
+  "statement": "Learner computes percentage changes on the new value rather than the original, understating both changes and distorting their ratio.",
+  "concept": "ratio-arithmetic",
+  "remediation_strategy": "quantity-intuition",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "A percentage change is a change relative to what - where you started, or where you ended?",
+   "Check your EPS change: which of the two EPS figures did you divide by?",
+   "Percentage change is the change divided by the ORIGINAL value, for both EPS and EBIT.",
+   "Dividing by the new figure shrinks each percentage. Redo both with the starting values underneath."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.RATIO-INVERTED",
+  "statement": "Learner forms a leverage ratio upside down - EBIT over contribution, EBT over EBIT, or the EBIT change over the EPS change - yielding a value below 1 where leverage should magnify.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "quantity-intuition",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Leverage magnifies. Should a degree of leverage with a positive fixed cost be above 1 or below it?",
+   "Your answer is below 1. Which figure did you put on top?",
+   "Each degree puts the more-leveraged measure on top: contribution over EBIT, EBIT over EBT, contribution over EBT.",
+   "Your answer is the reciprocal of the right one. Turn the ratio over."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.TAX-APPLIED-TO-DFL",
+  "statement": "Learner multiplies the degree of financial leverage by (1 - tax rate), treating DFL as a post-tax quantity. Tax scales EPS and EBT by the same factor, so it cancels out of a ratio of percentage changes and never enters DFL.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Before the number - which two quantities is financial leverage comparing?",
+   "Hold the tax rate fixed and move EBIT by 10%. Does the percentage change in EPS depend on that rate at all?",
+   "Tax multiplies both EPS and EBT by the same factor. What happens to a constant that appears in both halves of a ratio?",
+   "Work it as EBIT divided by (EBIT minus interest). The tax rate is not in that expression, and it never was."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.DFL-DOL-SWAPPED",
+  "statement": "Learner computes Contribution / EBIT when asked for financial leverage, or EBIT / EBT when asked for operating leverage. The two degrees are confused because both are ratios built from EBIT.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "Which risk is this question asking about - the cost structure above EBIT, or the financing below it?",
+   "Operating leverage looks upward, to contribution and fixed costs. Financial leverage looks downward, to interest. Which way does this one look?",
+   "Financial leverage is EBIT over EBT. Operating leverage is contribution over EBIT.",
+   "Check which figure you put on top. If interest appears anywhere in your working, you are computing financial leverage."
+  ]
+ },
+ {
+  "id": "ABFM.B.LEV.INTEREST-SUBTRACTED-TWICE",
+  "statement": "Learner subtracts interest from the numerator as well as the denominator, computing (EBIT - Interest) / (EBIT - Interest) style expressions, or nets interest out of EBIT before forming the ratio.",
+  "concept": "ratio-of-percentage-changes",
+  "remediation_strategy": "contrast-cases",
+  "status": "proposed",
+  "prevalence": null,
+  "ladder": [
+   "What does the numerator of this ratio represent, before any interest is paid?",
+   "You subtracted interest twice. Where should it appear - the top, the bottom, or both?",
+   "EBIT is the top line here, untouched. Interest comes off once, in the denominator.",
+   "A ratio whose numerator and denominator are the same expression is always 1.00, whatever the figures. That is the signal you subtracted twice."
+  ]
+ }
+]
