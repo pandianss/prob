@@ -56,10 +56,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.3 Degree of Financial Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of financial leverage",
+        "locator": "DFL = EBIT / EBT"
       }
     ],
     "derived_from": [
@@ -150,10 +149,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.5 Degree of Operating Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of operating leverage",
+        "locator": "DOL = Contribution / EBIT"
       }
     ],
     "derived_from": [
@@ -239,10 +237,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.6 Combined or Total Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of combined leverage",
+        "locator": "DCL = DOL x DFL = Contribution / EBT"
       }
     ],
     "derived_from": [
@@ -327,10 +324,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.5 Break-Even Analysis and Operating Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Break-even point",
+        "locator": "Break-even units = Fixed cost / Contribution per unit"
       }
     ],
     "derived_from": [
@@ -415,10 +411,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.3 Degree of Financial Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of financial leverage",
+        "locator": "DFL = % change in EPS / % change in EBIT"
       }
     ],
     "derived_from": [
@@ -503,10 +498,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.5 Degree of Operating Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of operating leverage",
+        "locator": "DOL = Contribution / EBIT"
       }
     ],
     "derived_from": [
@@ -581,10 +575,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.6 Combined or Total Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of combined leverage",
+        "locator": "DCL = DOL x DFL = Contribution / EBT"
       }
     ],
     "derived_from": [

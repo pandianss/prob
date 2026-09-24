@@ -121,7 +121,7 @@
         "statutory",
         "doctrinal"
       ],
-      "description": "statutory: authority is a clause. doctrinal: authority is the courseware plus, for numeric items, recomputation."
+      "description": "statutory: authority is a regulation or notified standard, quoted. doctrinal: pure finance maths - authority is the definition plus the recomputed working. The textbook is never learner-facing; it appears only in derived_from (3.6)."
     },
     "grounding": {
       "type": "array",
@@ -130,7 +130,8 @@
         "type": "object",
         "required": [
           "source",
-          "locator"
+          "locator",
+          "kind"
         ],
         "additionalProperties": false,
         "properties": {
@@ -146,8 +147,18 @@
           "kind": {
             "enum": [
               "statute",
-              "courseware"
-            ]
+              "standard",
+              "definition"
+            ],
+            "description": "statute: RBI/SEBI/MCA/CBDT/IFSCA etc. standard: notified Ind AS. definition: finance-maths definition, proven by arithmetic."
+          },
+          "issuer": {
+            "type": "string",
+            "description": "e.g. RBI, SEBI, MCA, CBDT, IFSCA, ICAI"
+          },
+          "quote": {
+            "type": "string",
+            "description": "Operative text, verbatim from the issuer"
           }
         }
       }

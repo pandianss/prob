@@ -372,6 +372,20 @@ Dropping textbook attribution from the learner UI is right: the learner is buyin
 
 Statutory `grounding` stays learner-facing regardless. It is what stands between the product and a confidently wrong threshold (§4), it costs nothing to display, and a banker genuinely benefits from seeing which Master Direction governs the answer — that is professional literacy, not clutter.
 
+#### What the learner is shown as the source
+
+**Never the textbook.** Every learner-facing citation is one of three kinds, and the validator rejects anything else:
+
+| Kind | Used for | Shown as |
+|---|---|---|
+| `statute` | Rules a regulator set - RBI, SEBI, MCA, CBDT, IFSCA, CCI | The instrument, section and date, with the operative text quoted from the issuer |
+| `standard` | Notified accounting standards (Ind AS) | The standard and paragraph |
+| `definition` | Pure finance mathematics - leverage, break-even, NPV | The definition, with the recomputed working. For maths, the proof is the authority. |
+
+A regulatory citation has to name which issue of the regulation it quotes, because regulations are superseded (see 13.2). An item grounded only on a definition has to carry an arithmetic proof. The textbook stays in `derived_from` as internal provenance.
+
+**Limit, stated plainly:** much of ABFM is theory, not regulation. No circular defines degree of financial leverage, and inventing one to cite would be the worst failure this system could have. `content/anchors/abfm.json` records, for each unit, whether a regulator actually governs it. Units 17-21, 24 and 25 are statutory. Units 7, 10, 13 and 16 are mixed. The management and finance-theory units are doctrinal. The anchors are listed but not yet confirmed against the issuers' current texts, and nothing may cite one until the statute store (4.2, 13) has fetched and quoted it.
+
 #### Derivation boundary
 
 The requirement is derived content, not reproduced prose — which is also the defensible position, since facts and procedures are not protectable but their expression is. Practically:

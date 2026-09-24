@@ -55,10 +55,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.3 Degree of Financial Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of financial leverage",
+        "locator": "DFL = EBIT / EBT"
       }
     ],
     "derived_from": [
@@ -151,10 +150,9 @@
     "grounding_regime": "doctrinal",
     "grounding": [
       {
-        "source": "IIBF ABFM",
-        "locator": "Unit 8.5 Degree of Operating Leverage",
-        "version": "2023",
-        "kind": "courseware"
+        "kind": "definition",
+        "source": "Degree of operating leverage",
+        "locator": "DOL = Contribution / EBIT"
       }
     ],
     "derived_from": [

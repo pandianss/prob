@@ -144,12 +144,28 @@ def main():
                 elif miscon[mid].get('status') == 'demoted':
                     err(where, u'distractor %s cites demoted misconception %s' % (o['id'], mid))
 
-            # 3.6 - authority is statutory, or courseware under the doctrinal regime
+            # 3.6 - the learner-facing source is never the textbook. Authority is
+            # a statute, a notified standard, or - for pure finance maths - the
+            # definition together with the recomputed working. The book lives
+            # only in derived_from, as internal provenance.
             regime = item.get('grounding_regime')
+            kinds = set()
             for g in item.get('grounding', []):
-                if regime == 'statutory' and g.get('kind') == 'courseware':
-                    err(where, u'statutory item grounded on courseware - authority '
-                               u'is statutory or it is not authority (3.6)')
+                k = g.get('kind')
+                kinds.add(k)
+                if k not in ('statute', 'standard', 'definition'):
+                    err(where, u'grounding kind "%s" - the learner-facing source must be a '
+                               u'statute, a standard or a definition, never the textbook (3.6)' % k)
+                if k in ('statute', 'standard') and not g.get('version'):
+                    err(where, u'%s grounding with no version/date - a citation to a '
+                               u'regulation must say which issue of it (13.4)' % k)
+            if regime == 'statutory' and not kinds & {'statute', 'standard'}:
+                err(where, u'statutory item with no statute or standard cited (3.6)')
+            if 'definition' in kinds and kinds <= {'definition'}:
+                numeric = any(o.get('value') is not None for o in item.get('options', []))
+                if numeric and not (item.get('verification') or {}).get('arithmetic'):
+                    err(where, u'grounded only on a definition, with no arithmetic proof - '
+                               u'for finance maths the working IS the authority (3.6)')
             if not item.get('grounding'):
                 err(where, u'no grounding')
             if item.get('derived_from') is None and regime == 'doctrinal':

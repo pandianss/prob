@@ -1,0 +1,67 @@
+{
+  "note": "Where each ABFM unit's content is governed by a regulator (BLUEPRINT 3.6). Candidate anchors, drafted from knowledge and NOT yet confirmed against the issuer's current text. Every entry must be fetched from the issuer and quoted before any item may cite it - and RBI's July 2026 consolidation of 628 circulars into 64 Master Directions (13.2) means RBI references in particular may have moved. Units with no anchor are pure finance or management theory: their authority is the definition plus the recomputed working, never an invented circular.",
+  "status": "unconfirmed",
+  "units": {
+    "1":  {"regime": "doctrinal", "anchors": []},
+    "2":  {"regime": "doctrinal", "anchors": []},
+    "3":  {"regime": "doctrinal", "anchors": []},
+    "4":  {"regime": "doctrinal", "anchors": []},
+    "5":  {"regime": "doctrinal", "anchors": []},
+    "6":  {"regime": "doctrinal", "anchors": []},
+    "7":  {"regime": "mixed", "anchors": [
+      {"issuer": "SEBI", "instrument": "SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018", "covers": "equity and preference issues"},
+      {"issuer": "MCA",  "instrument": "Companies Act, 2013 - s.55 (preference shares), s.71 (debentures)", "covers": "preference capital, debentures"},
+      {"issuer": "RBI",  "instrument": "Master Direction - External Commercial Borrowings", "covers": "foreign-currency term borrowing"}
+    ]},
+    "8":  {"regime": "doctrinal", "anchors": []},
+    "9":  {"regime": "doctrinal", "anchors": []},
+    "10": {"regime": "mixed", "anchors": [
+      {"issuer": "RBI/MoF", "instrument": "Foreign Exchange Management (Overseas Investment) Rules and Regulations, 2022, with RBI Master Direction", "covers": "overseas project investment"}
+    ]},
+    "11": {"regime": "doctrinal", "anchors": []},
+    "12": {"regime": "doctrinal", "anchors": []},
+    "13": {"regime": "mixed", "anchors": [
+      {"issuer": "MCA",  "instrument": "Companies (Registered Valuers and Valuation) Rules, 2017", "covers": "who may value, and how"},
+      {"issuer": "MCA",  "instrument": "Ind AS 113 - Fair Value Measurement", "covers": "fair value hierarchy", "kind": "standard"}
+    ]},
+    "14": {"regime": "doctrinal", "anchors": []},
+    "15": {"regime": "doctrinal", "anchors": []},
+    "16": {"regime": "mixed", "anchors": [
+      {"issuer": "MCA", "instrument": "Ind AS 38 - Intangible Assets", "covers": "brand and intangible valuation", "kind": "standard"}
+    ]},
+    "17": {"regime": "statutory", "anchors": [
+      {"issuer": "MCA",  "instrument": "Companies Act, 2013 - ss.230-232", "covers": "schemes of merger and demerger"},
+      {"issuer": "SEBI", "instrument": "SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011", "covers": "open offers, takeover thresholds"},
+      {"issuer": "CCI",  "instrument": "Competition Act, 2002 - ss.5-6", "covers": "combination thresholds and approval"},
+      {"issuer": "MCA",  "instrument": "Ind AS 103 - Business Combinations", "covers": "accounting for mergers", "kind": "standard"}
+    ]},
+    "18": {"regime": "statutory", "anchors": [
+      {"issuer": "CBDT", "instrument": "Income-tax Act - s.2(1B), s.47, s.72A", "covers": "amalgamation definition, tax neutrality, loss carry-forward"},
+      {"issuer": "RBI",  "instrument": "Foreign Exchange Management (Cross Border Merger) Regulations, 2018", "covers": "cross-border acquisitions"}
+    ]},
+    "19": {"regime": "statutory", "anchors": [
+      {"issuer": "SEBI", "instrument": "SEBI (ICDR) Regulations, 2018 - convertibles and warrants", "covers": "warrant tenure, pricing, conversion"},
+      {"issuer": "MCA",  "instrument": "Companies Act, 2013 - s.62", "covers": "further issue, conversion of debentures"},
+      {"issuer": "MoF/RBI", "instrument": "FCCB Scheme, 1993, with the ECB Master Direction", "covers": "foreign currency convertible bonds"},
+      {"issuer": "MCA",  "instrument": "Ind AS 32 - Financial Instruments: Presentation", "covers": "splitting compound instruments", "kind": "standard"}
+    ]},
+    "20": {"regime": "statutory", "anchors": [
+      {"issuer": "DPIIT", "instrument": "Startup recognition notification (G.S.R. 127(E), 2019, as amended)", "covers": "who counts as a startup"},
+      {"issuer": "CBDT",  "instrument": "Income-tax Act - s.80-IAC", "covers": "startup profit deduction"}
+    ]},
+    "21": {"regime": "statutory", "anchors": [
+      {"issuer": "SEBI", "instrument": "SEBI (Alternative Investment Funds) Regulations, 2012", "covers": "AIF categories, VC and PE funds"}
+    ]},
+    "22": {"regime": "doctrinal", "anchors": []},
+    "23": {"regime": "doctrinal", "anchors": []},
+    "24": {"regime": "statutory", "anchors": [
+      {"issuer": "RBI",  "instrument": "Framework for acceptance of Green Deposits (2023)", "covers": "green deposits by banks"},
+      {"issuer": "SEBI", "instrument": "Green debt securities - SEBI NCS framework and master circular", "covers": "green bonds"},
+      {"issuer": "MoF",  "instrument": "Sovereign Green Bonds Framework (2022)", "covers": "sovereign green issuance"},
+      {"issuer": "RBI",  "instrument": "Climate-related financial risk disclosure framework", "covers": "bank climate disclosure"}
+    ]},
+    "25": {"regime": "statutory", "anchors": [
+      {"issuer": "IFSCA", "instrument": "IFSCA (Issuance and Listing of Securities) Regulations, 2021", "covers": "SPAC listing in GIFT City"}
+    ]}
+  }
+}

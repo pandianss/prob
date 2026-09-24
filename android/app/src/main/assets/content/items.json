@@ -50,8 +50,8 @@
   "resolution": "DFL is EBIT divided by EBT, here 40,00,000 over 30,00,000. Tax never enters it: it scales EPS and EBT by the same factor, so it cancels out of a ratio of percentage changes.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.3 Degree of Financial Leverage"
+    "source": "Degree of financial leverage",
+    "locator": "DFL = EBIT / EBT"
    }
   ],
   "psychometrics": {
@@ -113,8 +113,8 @@
   "resolution": "EBT is 5,00,000 less 2,00,000 = 3,00,000, and DFL is EBIT over EBT = 1.67. The 30% tax plays no part: it scales EPS and EBT alike, so it cancels.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.3 Degree of Financial Leverage"
+    "source": "Degree of financial leverage",
+    "locator": "DFL = EBIT / EBT"
    }
   ],
   "psychometrics": {
@@ -181,8 +181,8 @@
   "resolution": "Contribution is 8,000 x (60 - 35) = 2,00,000. EBIT is that less 1,20,000 = 80,000. DOL is contribution over EBIT = 2.50.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.5 Degree of Operating Leverage"
+    "source": "Degree of operating leverage",
+    "locator": "DOL = Contribution / EBIT"
    }
   ],
   "psychometrics": {
@@ -244,8 +244,8 @@
   "resolution": "EBT is 1,20,000 less 40,000 = 80,000. Combined leverage is contribution over EBT = 3,00,000 / 80,000 = 3.75 - the same as DOL of 2.5 times DFL of 1.5.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.6 Combined or Total Leverage"
+    "source": "Degree of combined leverage",
+    "locator": "DCL = DOL x DFL = Contribution / EBT"
    }
   ],
   "psychometrics": {
@@ -306,8 +306,8 @@
   "resolution": "Each unit contributes 50 - 32 = Rs. 18 towards fixed cost, so break-even is 90,000 / 18 = 5,000 units. Current sales are irrelevant to where break-even sits.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.5 Break-Even Analysis and Operating Leverage"
+    "source": "Break-even point",
+    "locator": "Break-even units = Fixed cost / Contribution per unit"
    }
   ],
   "psychometrics": {
@@ -368,8 +368,8 @@
   "resolution": "EPS rises 3 on 8, or 37.5%. EBIT rises 25,000 on 1,00,000, or 25%. DFL is 37.5% over 25% = 1.50. Both changes are measured from the starting figures.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.3 Degree of Financial Leverage"
+    "source": "Degree of financial leverage",
+    "locator": "DFL = % change in EPS / % change in EBIT"
    }
   ],
   "psychometrics": {
@@ -430,8 +430,8 @@
   "resolution": "With no fixed cost, contribution and EBIT are the same 1,50,000, so DOL is exactly 1: profit moves in step with sales and nothing is magnified. Operating leverage exists only because of fixed cost.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.5 Degree of Operating Leverage"
+    "source": "Degree of operating leverage",
+    "locator": "DOL = Contribution / EBIT"
    }
   ],
   "psychometrics": {
@@ -482,8 +482,8 @@
   "resolution": "Combined leverage is operating leverage times financial leverage: 2.4 x 1.25 = 3.00. The magnifications compound, so they multiply rather than add.",
   "grounding": [
    {
-    "source": "IIBF ABFM",
-    "locator": "Unit 8.6 Combined or Total Leverage"
+    "source": "Degree of combined leverage",
+    "locator": "DCL = DOL x DFL = Contribution / EBT"
    }
   ],
   "psychometrics": {
