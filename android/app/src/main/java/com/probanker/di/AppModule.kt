@@ -22,6 +22,7 @@ object AppModule {
     @Singleton
     fun database(@ApplicationContext ctx: Context): ProBankerDatabase =
         Room.databaseBuilder(ctx, ProBankerDatabase::class.java, ProBankerDatabase.NAME)
+            .addMigrations(ProBankerDatabase.MIGRATION_1_2)
             .build()
 
     @Provides

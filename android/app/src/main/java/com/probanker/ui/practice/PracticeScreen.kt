@@ -285,11 +285,7 @@ private fun ResolvePane(state: PracticeState, vm: PracticeViewModel) {
                 }
             }
             Spacer(Modifier.height(14.dp))
-            Text(
-                item.item.groundingLocator,
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            SourceCard(item.item.groundingLocator, item.item.groundingQuote)
             Spacer(Modifier.height(10.dp))
             TextButton(
                 onClick = { vm.onIntent(PracticeIntent.ReportItem) },
@@ -301,6 +297,44 @@ private fun ResolvePane(state: PracticeState, vm: PracticeViewModel) {
             modifier = Modifier.fillMaxWidth().heightIn(min = Touch),
         ) { Text("Next question") }
         Spacer(Modifier.height(24.dp))
+    }
+}
+
+/**
+ * Where the answer comes from. A regulation is quoted in its own words, with
+ * the issue it quotes; a definition is shown by name and formula. The textbook
+ * is never the source shown here (BLUEPRINT 3.6).
+ */
+@Composable
+private fun SourceCard(locator: String, quote: String?) {
+    if (locator.isBlank() && quote.isNullOrBlank()) return
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        ),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Column(Modifier.padding(14.dp)) {
+            Text(
+                "SOURCE",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            if (!quote.isNullOrBlank()) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "“" + quote + "”",
+                    style = Reading.bodySmall.copy(fontStyle = androidx.compose.ui.text.font.FontStyle.Italic),
+                    color = MaterialTheme.colorScheme.onSurface,
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                locator,
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
     }
 }
 

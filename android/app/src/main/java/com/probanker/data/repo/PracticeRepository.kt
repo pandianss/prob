@@ -20,9 +20,14 @@ class PracticeRepository @Inject constructor(
     private val progress: ProgressDao,
     private val planner: SessionPlanner,
     private val fsrs: Fsrs,
+    private val pack: com.probanker.data.pack.ContentPackLoader,
 ) {
 
     suspend fun planSession(): List<ItemWithParts> {
+        // The pack ships in the APK; nothing reaches the database until this
+        // runs. It was never called in the first build, so every session was
+        // empty however much content had shipped.
+        pack.ensureLoaded()
         val now = System.currentTimeMillis()
         val due = content.dueCandidates(now = now, concepts = "", conceptList = emptyList())
         val candidates = due.map { item ->

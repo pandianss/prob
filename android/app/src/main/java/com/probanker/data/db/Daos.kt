@@ -61,6 +61,15 @@ interface ContentDao {
     @Query("SELECT COUNT(*) FROM items WHERE state IN ('live','field')")
     fun servableCount(): Flow<Int>
 
+    // Content is replaced wholesale when the pack changes, so a retired item
+    // cannot linger on the device. Learner tables are deliberately not here.
+    @Query("DELETE FROM item_options") suspend fun clearOptions()
+    @Query("DELETE FROM given_figures") suspend fun clearGiven()
+    @Query("DELETE FROM items") suspend fun clearItems()
+    @Query("DELETE FROM ladder_rungs") suspend fun clearRungs()
+    @Query("DELETE FROM misconceptions") suspend fun clearMisconceptions()
+    @Query("DELETE FROM concepts") suspend fun clearConcepts()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertConcepts(rows: List<ConceptEntity>)
 

@@ -16,7 +16,7 @@ import androidx.room.RoomDatabase
         MisconceptionStateEntity::class,
         ReviewScheduleEntity::class,
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 abstract class ProBankerDatabase : RoomDatabase() {
@@ -25,5 +25,12 @@ abstract class ProBankerDatabase : RoomDatabase() {
 
     companion object {
         const val NAME = "probanker.db"
+
+        /** v2: items carry the verbatim quote of the regulation they cite. */
+        val MIGRATION_1_2 = object : androidx.room.migration.Migration(1, 2) {
+            override fun migrate(db: androidx.sqlite.db.SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE items ADD COLUMN groundingQuote TEXT")
+            }
+        }
     }
 }

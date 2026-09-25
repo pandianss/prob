@@ -10,6 +10,8 @@ import com.probanker.data.db.LadderRungEntity
 import com.probanker.data.db.MisconceptionEntity
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import androidx.room.withTransaction
+import kotlinx.coroutines.sync.withLock
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -78,7 +80,12 @@ data class PackItem(
 )
 
 @Serializable
-data class PackGrounding(val source: String = "", val locator: String = "")
+data class PackGrounding(
+    val source: String = "",
+    val locator: String = "",
+    /** Verbatim regulation text, for statutory items. */
+    val quote: String = "",
+)
 
 @Serializable
 data class PackPsychometrics(val a: Double? = null, val b: Double? = null)
@@ -86,13 +93,41 @@ data class PackPsychometrics(val a: Double? = null, val b: Double? = null)
 @Serializable
 data class PackLifecycle(val state: String)
 
+@Serializable
+data class PackMeta(val version: String)
+
 @Singleton
 class ContentPackLoader @Inject constructor(
-    private val context: Context,
+    @dagger.hilt.android.qualifiers.ApplicationContext private val context: Context,
+    private val db: com.probanker.data.db.ProBankerDatabase,
     private val dao: ContentDao,
 ) {
 
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
+    private val mutex = kotlinx.coroutines.sync.Mutex()
+    private val prefs by lazy {
+        context.getSharedPreferences("content_pack", Context.MODE_PRIVATE)
+    }
+
+    /**
+     * Make sure the database holds the pack that shipped in this APK.
+     *
+     * Called before every session plan. Cheap when nothing changed (one
+     * preference read); when the pack's fingerprint differs, content tables are
+     * replaced wholesale in one transaction, so a retired item cannot linger
+     * and a failed load cannot leave the database half-empty. Learner history
+     * - attempts, mastery, schedules - is never touched.
+     */
+    suspend fun ensureLoaded() = mutex.withLock {
+        val version = json.decodeFromString<PackMeta>(read("content/pack.json")).version
+        if (prefs.getString(KEY_VERSION, null) == version) return@withLock
+        db.withTransaction {
+            dao.clearOptions(); dao.clearGiven(); dao.clearItems()
+            dao.clearRungs(); dao.clearMisconceptions(); dao.clearConcepts()
+            loadFromAssets()
+        }
+        prefs.edit().putString(KEY_VERSION, version).apply()
+    }
 
     suspend fun loadFromAssets(
         conceptsPath: String = "content/concepts.json",
@@ -135,7 +170,9 @@ class ContentPackLoader @Inject constructor(
                     concept = it.concept,
                     stem = it.stem,
                     groundingLocator = it.grounding.firstOrNull()
-                        ?.let { g -> "${g.source} ${g.locator}".trim() }.orEmpty(),
+                        ?.let { g -> listOf(g.source, g.locator).filter { s -> s.isNotBlank() }
+                            .joinToString(" · ") }.orEmpty(),
+                    groundingQuote = it.grounding.firstOrNull()?.quote?.ifBlank { null },
                     resolution = it.resolution,
                     difficulty = it.psychometrics?.b,
                     discrimination = it.psychometrics?.a,
@@ -162,5 +199,6 @@ class ContentPackLoader @Inject constructor(
 
     private companion object {
         val SERVABLE = setOf("live", "field")
+        const val KEY_VERSION = "pack_version"
     }
 }

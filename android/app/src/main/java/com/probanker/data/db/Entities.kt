@@ -78,6 +78,8 @@ data class ItemEntity(
     val stem: String,
     /** Learner-facing statutory/courseware locator, rendered under the answer. */
     val groundingLocator: String,
+    /** Verbatim text of the regulation cited, for statutory items (BLUEPRINT 4.2). */
+    val groundingQuote: String? = null,
     /** Authored explanation shown at RESOLVE. Never generated. */
     val resolution: String,
     // 2PL psychometrics; null until calibrated.

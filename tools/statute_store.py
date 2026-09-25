@@ -14,7 +14,13 @@ Sources are listed in content/statutes/sources.json. Each fetch writes:
 The downloaded PDF itself is not committed (it is reproducible from url + sha256).
 
     python tools/statute_store.py fetch sebi-aif-2012
+    python tools/statute_store.py fetch companies-act-2013 --file downloaded.pdf
     python tools/statute_store.py show sebi-aif-2012 reg-3
+
+--file is for issuers whose sites refuse automated access (India Code, MCA's
+e-book). Download the CURRENT consolidated text in a browser and pass it here;
+the registry still records the official URL, and the version is read from the
+document itself, so a stale copy is caught rather than silently stored.
 """
 import datetime, hashlib, io, json, os, re, sys
 
@@ -120,15 +126,29 @@ def split_regulations(text):
     return out
 
 
-def fetch(sid):
+def fetch(sid, local=None):
     src = sources().get(sid)
     if not src:
         raise SystemExit('unknown source %s (see content/statutes/sources.json)' % sid)
     import fitz
-    data = fetch_pdf(src['url'])
+    data = open(local, 'rb').read() if local else fetch_pdf(src['url'])
+    if not data.startswith(b'%PDF'):
+        raise SystemExit('%s is not a PDF' % (local or src['url']))
     digest = hashlib.sha256(data).hexdigest()
     doc = fitz.open(stream=data, filetype='pdf')
     text = clean(body_text(doc))
+
+    # Is this even the instrument claimed? A wrong file must be refused, not
+    # stored under another regulation's name: testing the local-file path with
+    # SEBI's AIF text once stored it, dated and plausible, as the Companies Act.
+    ident = src.get('identify_by')
+    if not ident:
+        raise SystemExit('%s has no identify_by phrase in sources.json - cannot confirm '
+                         'the document is the instrument claimed' % sid)
+    head = normalise(text[:6000])
+    if normalise(ident) not in head:
+        raise SystemExit('%s: document does not identify itself as "%s" - refusing to store it'
+                         % (local or src['url'], ident))
 
     m = re.search(r'Amended up\s*to\s+([A-Z][a-z]+ \d{1,2}, \d{4})', text)
     version = m.group(1) if m else src.get('version')
@@ -139,9 +159,15 @@ def fetch(sid):
     folder = os.path.join(ROOT, sid)
     if not os.path.isdir(folder):
         os.makedirs(folder)
+    if local and not m:
+        # Nothing in the document states its currency. Refuse rather than
+        # store an undated regulation that would look authoritative.
+        raise SystemExit('%s does not state which amendment it is current to - '
+                         'download the consolidated "as amended" text instead' % local)
     meta = {
         'id': sid, 'issuer': src['issuer'], 'title': src['title'], 'kind': src['kind'],
-        'url': src['url'], 'version': version, 'sha256': digest, 'pages': doc.page_count,
+        'url': src['url'], 'version': version,
+        'obtained': 'manual download' if local else 'fetched from issuer', 'sha256': digest, 'pages': doc.page_count,
         'fetched_at': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
         'clauses': len(clauses),
     }
@@ -182,7 +208,8 @@ def quote_ok(sid, clause, quote):
 
 def main(argv):
     if len(argv) >= 2 and argv[0] == 'fetch':
-        fetch(argv[1])
+        local = argv[argv.index('--file') + 1] if '--file' in argv else None
+        fetch(argv[1], local)
     elif len(argv) >= 3 and argv[0] == 'show':
         c = (load_clauses(argv[1]) or {}).get(argv[2])
         if not c:

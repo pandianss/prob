@@ -90,6 +90,13 @@ def main():
     write(os.path.join(OUT, 'concepts.json'), concepts)
     write(os.path.join(OUT, 'misconceptions.json'), packed_mis)
     write(os.path.join(OUT, 'items.json'), packed_items)
+    # Fingerprint of exactly what ships. The app reloads its content tables
+    # only when this changes, and never touches learner history when it does.
+    import hashlib
+    h = hashlib.sha256()
+    for name in ('concepts.json', 'misconceptions.json', 'items.json'):
+        h.update(io.open(os.path.join(OUT, name), 'rb').read())
+    write(os.path.join(OUT, 'pack.json'), {'version': h.hexdigest()[:16]})
 
     print(u'pack -> %s' % OUT)
     print(u'  concepts       %d' % len(concepts))
